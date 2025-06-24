@@ -569,17 +569,8 @@ const projectPathsDev = {
   "pathGuideInclude": "guide/pages/include",
   "pathPagesInclude": "pages/include",
   "pathPagesPrototype": "pages/prototype",
-  "pathPagesCM": "pages/CM",
-  "pathPagesQK": "pages/QK",
-  "pathPagesMN": "pages/MN",
-  "pathPagesML": "pages/ML",
-  "pathPagesMY": "pages/MY",
-  "pathPagesDC": "pages/DC",
-  "pathPagesFG": "pages/FG",
-  "pathPagesPT": "pages/PT",
-  "pathPagesSC": "pages/SC",
-  "pathPagesCS": "pages/CS",
-  "pathPagesFT": "pages/FT"
+  "pathPagesMain": "pages/main",
+  "pathPagesDetail": "pages/detail"
 };
 // END OF CODINGLIST PATHS DEV
 
@@ -599,7 +590,8 @@ const projectPathsBuild = {
   "pathGuideMailform": "guide/pages/mailform",
   "pathGuideInclude": "guide/pages/include",
   "pathPagesInclude": "pages/include",
-  "pathPagesMain": "pages/main"
+  "pathPagesMain": "pages/main",
+  "pathPagesDetail": "pages/detail"
 };
 // END OF CODINGLIST PATHS BUILD
 

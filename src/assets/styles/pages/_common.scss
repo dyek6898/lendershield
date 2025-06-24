@@ -1,0 +1,129 @@
+@use "../abstracts" as *;
+
+// 상세페이지
+.datail-wrap {
+  @include rem(margin-top, 80);
+  .corporate-info-section {
+    @include rem(padding, 24 32);
+    @include rem(border-radius, 16);
+    background: #f5f6fa;
+    .tit-area {
+      display: flex;
+      justify-content: space-between;
+      .group-tit {
+        @include f24(600);
+      }
+      .btn-download {
+        @include rem(padding, 10 20);
+        @include rem(border-radius, 16);
+        color: $font-ffffff;
+        @include f14(600);
+        background: $bg-14b426;
+      }
+    }
+    .column-group {
+      display: flex;
+      @include rem(margin-top, 24);
+      .column-area {
+        width: 50%;
+        + .column-area {
+          @include rem(margin-left, 24);
+        }
+      }
+      .column-tit {
+        color: $font-111111;
+        @include f18(600);
+      }
+      .column-content {
+        @include rem(margin-top, 18);
+        .corporate-info {
+          display: flex;
+          > div {
+            + div {
+              @include rem(margin-left, 24);
+            }
+          }
+          .logo-area {
+            img {
+              width: 100%;
+            }
+          }
+          .list-item {
+            display: flex;
+            align-items: center;
+            span {
+              color: $font-666666;
+              @include f12();
+            }
+            .type-tit {
+              @include rem(width, 100);
+            }
+            .type-desc {
+              color: $font-111111;
+              flex: 1;
+            }
+          }
+        }
+        .ranking-info {
+          display: flex;
+          @include rem(margin-top, 24);
+          .info-box {
+            .box-tit {
+              color: $font-111111;
+              @include f14(600);
+            }
+            + .info-box {
+              @include rem(margin-left, 40);
+            }
+          }
+        }
+        .box-list {
+          display: flex;
+          flex-wrap: wrap;
+          .list-item {
+            display: flex;
+            width: calc(50% - 0.8rem);
+            @include rem(padding, 20 24);
+            @include rem(border-radius, 16);
+            background: $bg-ffffff;
+            flex-direction: column;
+            justify-content: space-between;
+            list-style: none;
+            .list-tit {
+              color: $font-111111;
+              @include f14(600);
+            }
+            ul {
+              @include rem(margin-top, 16);
+              li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                span {
+                  color: $font-444444;
+                  @include f12();
+                }
+                .type-desc {
+                  color: $font-111111;
+                  font-weight: 600;
+                }
+                + li {
+                  @include rem(margin-top, 5);
+                }
+              }
+            }
+            &::marker {
+              display: none;
+            }
+            + .list-item {
+              @include rem(margin-left, 16);
+            }
+          }
+          + .box-list {
+            @include rem(margin-top, 18);
+          }
+        }
+      }
+    }
+  }
+}

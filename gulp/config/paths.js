@@ -53,17 +53,8 @@ const projectReplacePaths = {
   pathGuideInclude: getBuildPath(`guide/pages/include`, `guide/pages/include`),
   pathPagesInclude: getBuildPath(`pages/include`, `pages/include`),
   pathPagesPrototype: getBuildPath(`pages/prototype`, `pages/prototype`),
-  pathPagesCM: getBuildPath(`pages/CM`, `pages/CM`),
-  pathPagesQK: getBuildPath(`pages/QK`, `pages/QK`),
-  pathPagesMN: getBuildPath(`pages/MN`, `pages/MN`),
-  pathPagesML: getBuildPath(`pages/ML`, `pages/ML`),
-  pathPagesMY: getBuildPath(`pages/MY`, `pages/MY`),
-  pathPagesDC: getBuildPath(`pages/DC`, `pages/DC`),
-  pathPagesFG: getBuildPath(`pages/FG`, `pages/FG`),
-  pathPagesPT: getBuildPath(`pages/PT`, `pages/PT`),
-  pathPagesSC: getBuildPath(`pages/SC`, `pages/SC`),
-  pathPagesCS: getBuildPath(`pages/CS`, `pages/CS`),
-  pathPagesFT: getBuildPath(`pages/FT`, `pages/FT`),
+  pathPagesMain: getBuildPath(`pages/main`, `pages/main`),
+  pathPagesDetail: getBuildPath(`pages/detail`, `pages/detail`),
   // 필요한 경로를 추가 합니다.
 };
 

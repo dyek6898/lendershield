@@ -104,7 +104,7 @@
 
 // 이제 각 폰트 사이즈 믹스인에 기본 라인 하이트 설정
 
-@mixin f12($fontWeight: null, $lineHeight: 1.4) {
+@mixin f12($fontWeight: null, $lineHeight: 1.6) {
   @include rem(font-size, 12);
   @include font-style($fontWeight, $lineHeight);
 }
@@ -114,13 +114,18 @@
   @include font-style($fontWeight, $lineHeight);
 }
 
-@mixin f16($fontWeight: null, $lineHeight: 1.4) {
+@mixin f16($fontWeight: null, $lineHeight: 1.6) {
   @include rem(font-size, 16);
   @include font-style($fontWeight, $lineHeight);
 }
 
-@mixin f18($fontWeight: null, $lineHeight: 1.4) {
+@mixin f18($fontWeight: null, $lineHeight: 1.6) {
   @include rem(font-size, 18);
+  @include font-style($fontWeight, $lineHeight);
+}
+
+@mixin f24($fontWeight: null, $lineHeight: 1.6) {
+  @include rem(font-size, 24);
   @include font-style($fontWeight, $lineHeight);
 }
 
@@ -716,7 +721,7 @@ $unit-base-font-size: $global-font-size;
       pct: 0%,
       percent: 0%,
       num: 0,
-      number: 0 // percent or number,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+      number: 0 // percent or number,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
     ),
     $unit
   );
