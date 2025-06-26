@@ -570,7 +570,8 @@ const projectPathsDev = {
   "pathPagesInclude": "pages/include",
   "pathPagesPrototype": "pages/prototype",
   "pathPagesMain": "pages/main",
-  "pathPagesDetail": "pages/detail"
+  "pathPagesDetail": "pages/detail",
+  "pathPagesLogin": "pages/login",
 };
 // END OF CODINGLIST PATHS DEV
 
@@ -591,7 +592,8 @@ const projectPathsBuild = {
   "pathGuideInclude": "guide/pages/include",
   "pathPagesInclude": "pages/include",
   "pathPagesMain": "pages/main",
-  "pathPagesDetail": "pages/detail"
+  "pathPagesLogin": "pages/detail",
+  "pathPagesDetail": "pages/login",
 };
 // END OF CODINGLIST PATHS BUILD
 

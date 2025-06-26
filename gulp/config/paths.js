@@ -55,6 +55,7 @@ const projectReplacePaths = {
   pathPagesPrototype: getBuildPath(`pages/prototype`, `pages/prototype`),
   pathPagesMain: getBuildPath(`pages/main`, `pages/main`),
   pathPagesDetail: getBuildPath(`pages/detail`, `pages/detail`),
+  pathPagesLogin: getBuildPath(`pages/login`, `pages/login`),
   // 필요한 경로를 추가 합니다.
 };
 

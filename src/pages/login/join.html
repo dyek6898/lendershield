@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>프로젝트타이틀</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="pathStyles/style.css" type="text/css" rel="stylesheet" />
+    <script src="pathScripts/common.ui.plugin.js" data-init></script>
+    <script src="pathScripts/common.ui.js" data-init></script>
+    <script src="pathScripts/common.js"></script>
+    <!-- 약관 템플릿 js(추후 작업예정) -->
+    <!-- <script src="pathScripts/ui/templates/privacy_policy_template.js"></script> -->
+  </head>
+
+  <body>
+    <div id="wrap">
+      @@include('pathPagesInclude/_header.html', { "title": "test_title01", "title02": "test_title02" })
+
+      <div class="bg-f5f6fa" id="container">
+        <div id="content">
+          <div class="login-wrap">
+            <div class="content-inner wid-756">
+              <hgroup class="page-tit-group">
+                <h2 class="page-tit"> 회원가입 </h2>
+                <span class="page-sub-tit">
+                  반갑습니다.<br />
+                  더 많은 서비스를 제공을 준비중 입니다.
+                </span>
+              </hgroup>
+              <div class="login-area">
+                <div class="component-form">
+                  <!-- 아이디 -->
+                  <div class="form-element">
+                    <label for="temp_input_0001" class="input-label">
+                      <span class="label-txt">
+                        회사 이메일
+                        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+                      </span>
+                    </label>
+                    <div class="form-group">
+                      <div class="component-input">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_0001" placeholder="이메일을 입력해 주세요." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 비밀번호 -->
+                  <div class="form-element">
+                    <label for="temp_input_0002" class="input-label">
+                      <span class="label-txt">
+                        비밀번호
+                        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+                      </span>
+                    </label>
+                    <div class="form-group">
+                      <div class="component-input">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_0002" placeholder="비밀번호를 입력해 주세요." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 비밀번호 -->
+                  <div class="form-element">
+                    <label for="temp_input_0002" class="input-label">
+                      <span class="label-txt">
+                        비밀번호 확인
+                        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+                      </span>
+                    </label>
+                    <div class="form-group">
+                      <div class="component-input">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_0002" placeholder="비밀번호를 입력해 주세요." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 휴대폰번호(type02) -->
+                  <div class="form-element">
+                    <label for="temp_input_0002" class="input-label">
+                      <span class="label-txt">
+                        휴대폰 인증
+                        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+                      </span>
+                    </label>
+                    <div class="form-group">
+                      <div class="component-input">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_0002" placeholder="휴대폰 번호를 입력해 주세요." />
+                        </div>
+                      </div>
+                      <button class="btn-confirm">
+                        <span class="btn-txt">인증</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @@include('pathPagesInclude/_footer.html')
+    </div>
+    <div class="dimm"></div>
+  </body>
+</html>

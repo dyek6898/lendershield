@@ -4,12 +4,12 @@
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   vertical-align: middle;
   @include rem(min-height, 40);
   @include rem(padding, 0 20);
-  border: 1px solid $line-000000;
   background: $bg-ffffff;
-  @include rem(border-radius, 5);
+  @include rem(border-radius, 8);
 
   // button 공통 - 텍스트
   .btn-txt {

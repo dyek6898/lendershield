@@ -282,3 +282,80 @@
     }
   }
 }
+
+// 로그인/회원가입
+.page-login {
+  background: $bg-f5f6fa;
+  #content {
+    height: calc(100vh - 223px);
+  }
+}
+.login-wrap {
+  height: 100%;
+  .content-inner {
+    height: 100%;
+  }
+  .form-area {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .login-tit {
+      .logo {
+        @include rem(width, 346);
+        @include rem(height, 52);
+        background: url("pathImages/icon/ico_logo.svg") center center no-repeat;
+        background-size: 100% auto;
+      }
+      + .component-form {
+        @include rem(margin-top, 80);
+      }
+    }
+  }
+  .component-form {
+    width: 100%;
+    @include rem(padding, 80 130);
+    @include rem(border-radius, 16);
+    background: $bg-ffffff;
+    .btn-login {
+      width: 100%;
+      @include rem(height, 56);
+      @include rem(margin-top, 24);
+      background: $bg-090a3c;
+      .btn-txt {
+        color: $font-ffffff;
+      }
+    }
+    .btn-area {
+      display: flex;
+      @include rem(margin-top, 24);
+      align-items: center;
+      justify-content: space-between;
+      a {
+        color: $font-666666;
+        @include f16();
+        &.btn-join {
+          color: $font-111111;
+          font-weight: 700;
+          text-decoration: underline;
+          text-underline-position: from-font;
+        }
+        + a {
+          position: relative;
+          @include rem(padding-left, 16);
+          @include rem(margin-left, 16);
+          &::before {
+            content: "";
+            position: absolute;
+            @include rem(top, 2);
+            left: 0;
+            width: 1px;
+            @include rem(height, 16);
+            background: $bg-dddddd;
+          }
+        }
+      }
+    }
+  }
+}

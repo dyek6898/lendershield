@@ -186,8 +186,38 @@ body {
   @include rem(max-width, 1400);
   margin: 0 auto;
   @include rem(padding, 0 20 160);
+  &.wid-756 {
+    @include rem(max-width, 756);
+    margin: 0 auto;
+  }
+  &.pb-0 {
+    padding-bottom: 0;
+  }
 }
 
+.page-tit-group {
+  display: flex;
+  @include rem(margin-top, 120);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .page-tit {
+    color: $font-111111;
+    @include f40(600);
+  }
+  .page-sub-tit {
+    @include rem(margin-top, 8);
+    color: $font-444444;
+    @include f18();
+    text-align: center;
+  }
+  + .login-area {
+    @include rem(margin-top, 40);
+  }
+}
+.bg-f5f6fa {
+  background: $bg-f5f6fa;
+}
 /* 아이콘 공통 속성 */
 // mobile, pc 공통
 [class^="ico-"] {
