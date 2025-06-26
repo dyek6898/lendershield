@@ -5,8 +5,8 @@
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
-  @include rem(min-height, 45);
-  @include rem(padding, 0 30);
+  @include rem(min-height, 40);
+  @include rem(padding, 0 20);
   border: 1px solid $line-000000;
   background: $bg-ffffff;
   @include rem(border-radius, 5);

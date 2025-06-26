@@ -3,10 +3,62 @@
 // 상세페이지
 .datail-wrap {
   @include rem(margin-top, 80);
+
+  // 공통
+  .section {
+    .section-tit {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .type-tit {
+        color: $font-111111;
+        @include f18(600);
+      }
+      .right-txt {
+        color: $font-666666;
+        @include f12();
+        + .right-txt {
+          @include rem(margin-left, 24);
+        }
+      }
+    }
+    .section-content {
+      @include rem(margin-top, 16);
+    }
+    .component-table {
+      .right-txt {
+        display: block;
+        color: $font-666666;
+        @include f12();
+        text-align: right;
+        + table {
+          @include rem(margin-top, 16);
+        }
+      }
+    }
+    .btn-area {
+      display: flex;
+      @include rem(margin-top, 16);
+      align-items: center;
+      justify-content: right;
+      .btn-more {
+        @include rem(padding-right, 20);
+        color: $font-444444;
+        @include f14();
+        background: url("pathImages/icon/ico_arr_rigth_small.svg") center right no-repeat;
+        @include rem(background-size, 16 16);
+      }
+    }
+    + .section {
+      @include rem(margin-top, 48);
+    }
+  }
+
+  // 기업정보
   .corporate-info-section {
     @include rem(padding, 24 32);
     @include rem(border-radius, 16);
-    background: #f5f6fa;
+    background: $bg-f5f6fa;
     .tit-area {
       display: flex;
       justify-content: space-between;
@@ -15,7 +67,7 @@
       }
       .btn-download {
         @include rem(padding, 10 20);
-        @include rem(border-radius, 16);
+        @include rem(border-radius, 8);
         color: $font-ffffff;
         @include f14(600);
         background: $bg-14b426;
@@ -61,6 +113,9 @@
             .type-desc {
               color: $font-111111;
               flex: 1;
+            }
+            + .list-item {
+              @include rem(margin-top, 4);
             }
           }
         }
@@ -123,6 +178,106 @@
             @include rem(margin-top, 18);
           }
         }
+      }
+    }
+  }
+
+  //주요 지표 변동 추이
+  .chart-section {
+    .chart-area {
+      display: flex;
+      align-items: center;
+      .chart-list {
+        width: calc(100% / 3);
+        + .chart-list {
+          @include rem(margin-left, 28);
+        }
+      }
+      .list-tit {
+        color: $font-111111;
+        @include f14(600);
+      }
+      .chart {
+        width: 100%;
+        @include rem(height, 235);
+        @include rem(margin-top, 22);
+      }
+    }
+  }
+
+  // 채무보증
+  .debt-guarantee-section {
+    display: flex;
+    align-items: stretch;
+    .section-content {
+      position: relative;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+    }
+    .section-column {
+      width: 100%;
+      .component-table {
+        + .component-table {
+          @include rem(margin-top, 16);
+        }
+      }
+      .component-btns {
+        display: flex;
+        @include rem(margin-top, 12);
+        align-items: center;
+        justify-content: space-between;
+        .btn {
+          + .btn {
+            @include rem(margin-left, 8);
+          }
+        }
+        .btn-more {
+          color: $font-444444;
+          @include f14();
+        }
+      }
+      .new-list {
+        border-top: 1px solid $line-eeeeee;
+        .list-item {
+          display: flex;
+          @include rem(padding, 8 0);
+          border-bottom: 1px solid $line-eeeeee;
+          flex-direction: column;
+          span {
+            color: $font-666666;
+            @include f12();
+          }
+          .type-tit {
+            color: $font-111111;
+            @include f14(600);
+            + .type-info {
+              @include rem(margin-top, 4);
+            }
+          }
+        }
+      }
+      .btn-area {
+        position: absolute;
+        @include rem(bottom, 50);
+        right: 0;
+      }
+      &:last-child {
+        @include rem(width, 330);
+      }
+      + .section-column {
+        @include rem(margin-left, 28);
+      }
+    }
+  }
+
+  // 매출비율
+  .sales-ratio-section {
+    display: flex;
+    .section-column {
+      width: 50%;
+      + .section-column {
+        @include rem(margin-left, 28);
       }
     }
   }

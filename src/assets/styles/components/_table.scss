@@ -9,8 +9,8 @@
     border-collapse: collapse;
     width: 100%;
     @include f14;
-    border-bottom: 1px solid gray;
-    border-left: 1px solid gray;
+    border-bottom: 1px solid $line-eeeeee;
+    border-left: 1px solid $line-eeeeee;
   }
 
   // table 공통 - caption 영역
@@ -25,9 +25,10 @@
   // table 공통 - th,td 영역
   th,
   td {
-    @include rem(padding, 10 15);
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
+    @include rem(padding, 7 10);
+    @include f12(600);
+    border-top: 1px solid $line-eeeeee;
+    border-right: 1px solid $line-eeeeee;
     border-bottom: transparent;
     text-align: center;
     vertical-align: middle;
@@ -39,7 +40,44 @@
     }
   }
   th {
-    background-color: lightgray;
+    color: $font-ffffff;
+    border-color: $line-444444;
+    border-left: 1px solid $line-444444;
+    background: $bg-090a3c;
+  }
+  td {
+    color: $font-111111;
+  }
+
+  tbody {
+    th {
+      color: $font-111111;
+      border-color: $line-eeeeee;
+      background: $bg-f5f6fa;
+    }
+    td {
+      color: $font-444444;
+      font-weight: 400;
+    }
+  }
+
+  tr {
+    &.bg {
+      background: $bg-dae1fa;
+      th {
+        background: $bg-dae1fa;
+      }
+      th,
+      td {
+        &:not(:last-child) {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .type-blur {
+    filter: blur(5px);
   }
 
   // table custom - fixed 영역

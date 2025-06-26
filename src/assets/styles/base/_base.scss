@@ -185,6 +185,7 @@ body {
 .content-inner {
   @include rem(max-width, 1400);
   margin: 0 auto;
+  @include rem(padding, 0 20 160);
 }
 
 /* 아이콘 공통 속성 */
