@@ -23,20 +23,22 @@
   .input-field {
     display: flex;
     align-items: center;
-    @include rem(height, 42);
+    @include rem(height, 48);
     border: 1px solid gainsboro;
     background-color: $bg-ffffff;
     overflow: hidden;
-    @include rem(border-radius, 4);
+    @include rem(border-radius, 8);
     input {
       border: 0;
       background-color: transparent;
       width: 100%;
       height: 100%;
-      @include rem(padding, 0 8);
-      @include f18();
+      @include rem(padding, 0 16);
+      color: $font-111111;
+      @include f14();
       ::placeholder {
-        @include f12();
+        color: $font-999999;
+        @include f14();
       }
       &[type="search"] {
         &::-webkit-search-cancel-button {

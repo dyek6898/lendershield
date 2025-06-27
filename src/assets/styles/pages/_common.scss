@@ -127,6 +127,35 @@
               color: $font-111111;
               @include f14(600);
             }
+            .box-ranking {
+              display: flex;
+              @include rem(margin-top, 16);
+              align-items: center;
+              .ranking-item {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                + .ranking-item {
+                  @include rem(margin-left, 8);
+                }
+              }
+              .type-ranking {
+                display: inline-flex;
+                @include rem(width, 56);
+                @include rem(height, 56);
+                color: $font-090a3c;
+                @include f12(700);
+                border-radius: 50%;
+                background: $bg-ffffff;
+                align-items: center;
+                justify-content: center;
+              }
+              .type-desc {
+                @include rem(margin-top, 8);
+                color: $font-111111;
+                @include f12();
+              }
+            }
             + .info-box {
               @include rem(margin-left, 40);
             }
@@ -258,12 +287,15 @@
         }
       }
       .btn-area {
-        position: absolute;
-        @include rem(bottom, 50);
-        right: 0;
+        margin-top: 0;
       }
       &:last-child {
         @include rem(width, 330);
+        .btn-area {
+          position: absolute;
+          @include rem(bottom, 50);
+          right: 0;
+        }
       }
       + .section-column {
         @include rem(margin-left, 28);
@@ -355,6 +387,13 @@
             background: $bg-dddddd;
           }
         }
+      }
+    }
+    .btn-confirm {
+      @include rem(min-width, 120);
+      .btn-txt {
+        color: $font-090a3c;
+        @include f14(400);
       }
     }
   }

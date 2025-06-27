@@ -2,10 +2,8 @@
 
 .header {
   width: 100%;
-  // @include rem(height, 80);
   transition: all 0.3s ease;
-  border-bottom: 1px solid $line-000000;
-  // background-color: $bg-cccccc;
+  border-bottom: 1px solid $line-dddddd;
   &.on {
     transform: translate3d(0, -110%, 0);
     .header-inner {
@@ -46,17 +44,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1440px;
+    @include rem(max-width, 1680);
     margin: 0 auto;
-    @include rem(padding, 10);
+    @include rem(padding, 24 20);
 
     // logo
     .gnb-logo {
       .logo {
         display: inline-block;
-        @include rem(width, 200);
-        @include rem(height, 22);
-        background: #000000 url("pathGuideImages/uxdev_logo.png") no-repeat center;
+        @include rem(width, 213);
+        @include rem(height, 32);
+        background: url("pathImages/icon/ico_logo.svg") center no-repeat;
         background-size: 100%;
         white-space: nowrap;
         overflow: hidden;
@@ -65,56 +63,27 @@
       }
     }
 
-    // gnb
-    .gnb-area {
-      // margin-left: auto;
-      .gnb-list {
-        position: relative;
+    .utill-area {
+      .utill-item {
         display: flex;
-        .one-depth {
-          @include rem(margin, 0 30);
-          span {
-            @include f18;
-          }
-          .two-depth-list {
-            display: none;
-            position: absolute;
-            top: 18px;
-            left: 0;
-          }
-          &.on {
-            .two-depth-list {
-              display: block;
-            }
+        align-items: center;
+        .btn-search {
+          @include rem(width, 24);
+          @include rem(height, 24);
+          padding: 0;
+          background: url("pathImages/icon/ico_search.svg") center no-repeat;
+          background-size: 100% auto;
+          + .component-btns {
+            @include rem(margin-left, 24);
           }
         }
-      }
-    }
-
-    // User
-    .user {
-      button[class^="btn-"] {
-        display: inline-block;
-        overflow: hidden;
-        @include rem(width, 48);
-        @include rem(height, 48);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-        color: transparent;
-        font-size: 1rem;
-        white-space: nowrap;
-        vertical-align: middle;
-        margin: 0;
-        &.btn-login {
-          background-image: url("pathGuideImagesIcon/ico_login.png");
-          background-size: 50%;
-        }
-        &.btn-search {
-          background-image: url("pathGuideImagesIcon/header_search.png");
-        }
-        &.btn-allmenu {
-          background-image: url("pathGuideImagesIcon/header_allmenu.png");
+        a {
+          @include rem(padding, 8 20);
+          @include f16(700);
+          @include rem(border-radius, 8);
+          + a {
+            @include rem(margin-left, 12);
+          }
         }
       }
     }

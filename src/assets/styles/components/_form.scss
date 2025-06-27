@@ -165,111 +165,118 @@
   }
 
   // new form
-  .form-element{
-    .input-label{
-      display: flex;
+  .form-element {
+    .input-label {
+      position: relative;
+      display: inline-flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       .label-txt {
         flex: 1 0 auto;
-        @include f16();
+        @include f14(600);
+        color: $font-111111;
       }
-      .ico-required-mark{
-        color: #FEA339;
+      .ico-required-mark {
+        position: absolute;
+        top: 0;
+        @include rem(right, -5);
+        @include rem(width, 3);
+        @include rem(height, 3);
+        border-radius: 50%;
+        background: $bg-ff0101;
       }
-      & + .form-group{
+      & + .form-group {
         @include rem(margin-top, 6);
       }
     }
-    .form-group{
+    .form-group {
       display: flex;
       align-items: center;
     }
-    .component-input{
+    .component-input {
       flex: 1;
-      .input-field{
+      .input-field {
         position: relative;
-        input{
+        input {
           &::placeholder {
             @include f14();
           }
         }
       }
-      .type-time{
+      .type-time {
         position: absolute;
         @include rem(top, 12);
         @include rem(right, 12);
         color: #fe508b;
         @include f12();
       }
-      & + .component-input{
+      & + .component-input {
         @include rem(margin-left, 10);
       }
-      & + .resident-number{
-        @include rem(margin-left,10);
+      & + .resident-number {
+        @include rem(margin-left, 10);
       }
     }
-    .component-select{
+    .component-select {
       @include rem(width, 120);
-      .select-list{
+      .select-list {
         @include rem(height, 42);
         @include f14();
       }
-      & + .component-input{
+      & + .component-input {
         @include rem(margin-left, 10);
       }
     }
-    .resident-number{
+    .resident-number {
       display: flex;
       flex: 1;
-      .resident-input{
+      .resident-input {
         @include rem(width, 40);
         flex: none;
       }
-      .hidden-list{
+      .hidden-list {
         display: flex;
-        @include rem(margin-left,3);
+        @include rem(margin-left, 3);
         @include rem(padding, 0 20);
         border: 1px solid gainsboro;
-        @include rem(border-radius,5);
+        @include rem(border-radius, 5);
         align-items: center;
         justify-content: space-around;
         flex: 1;
-        li{
-          @include rem(width,6);
-          @include rem(height,6);
+        li {
+          @include rem(width, 6);
+          @include rem(height, 6);
           border-radius: 100%;
           background-color: #000;
         }
       }
     }
-    .bar{
+    .bar {
       @include rem(width, 6);
       @include rem(height, 1);
       @include rem(margin, 0 4);
       background-color: #000;
       overflow: hidden;
     }
-    button{
-      &[class*=btn-]{
+    button {
+      &[class*="btn-"] {
         @include rem(height, 42);
-        @include rem(margin-left, 10);
+        @include rem(margin-left, 8);
         @include rem(padding, 8 20);
         border: 1px solid #000;
         @include rem(border-radius, 5);
-        &:disabled{
+        &:disabled {
           border-color: #f7f8fd;
           background-color: #f7f8fd;
         }
       }
-      .btn-txt{
+      .btn-txt {
         @include f16();
       }
     }
-    + .form-element{
-      @include rem(margin-top,20);
+    + .form-element {
+      @include rem(margin-top, 20);
     }
   }
-
 }

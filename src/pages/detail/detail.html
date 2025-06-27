@@ -69,9 +69,29 @@
                       <div class="ranking-info">
                         <div class="info-box">
                           <span class="box-tit">2024 시공역량 순위</span>
+                          <ul class="box-ranking">
+                            <li class="ranking-item">
+                              <span class="type-ranking">999위</span>
+                              <span class="type-desc">시공능력평가</span>
+                            </li>
+                          </ul>
                         </div>
                         <div class="info-box">
                           <span class="box-tit">신평 3사 회사채 신용 등급</span>
+                          <ul class="box-ranking">
+                            <li class="ranking-item">
+                              <span class="type-ranking">DDD+</span>
+                              <span class="type-desc">한국신용평가</span>
+                            </li>
+                            <li class="ranking-item">
+                              <span class="type-ranking">DDD-</span>
+                              <span class="type-desc">한국기업평가</span>
+                            </li>
+                            <li class="ranking-item">
+                              <span class="type-ranking">AA+</span>
+                              <span class="type-desc">나이스신용평가</span>
+                            </li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -189,6 +209,7 @@
                       <thead>
                         <tr>
                           <th scope="col"></th>
+                          <!-- 각 blur-col 클래스 제거 시 해당 열의 blur처리 해제됩니다. -->
                           <th scope="col" class="blur-col">2021</th>
                           <th scope="col" class="blur-col">2022</th>
                           <th scope="col">2022</th>
@@ -567,17 +588,19 @@
                       </table>
                       <div iv class="component-btns">
                         <div class="btns-col">
-                          <button type="button" class="btn">
+                          <button type="button" class="btn btn-s btn-link">
                             <span class="btn-txt">종합 우발부채 (연결 재무재표 주석)</span>
                           </button>
-                          <button type="button" class="btn">
+                          <button type="button" class="btn btn-s btn-link">
                             <span class="btn-txt">종합 우발부채 (재무재표 주석)</span>
                           </button>
-                          <button type="button" class="btn">
+                          <button type="button" class="btn btn-s btn-link">
                             <span class="btn-txt">종합 우발부채 (그 밖에 투자자 보호를 위하여 필요한 사항)</span>
                           </button>
                         </div>
-                        <button class="btn-more">더보기</button>
+                        <div class="btn-area">
+                          <button class="btn-more">더보기</button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1258,17 +1281,41 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const table = document.querySelector(".component-table table");
-        const headerCells = table.querySelectorAll("thead th");
+        const headerEl = table.querySelectorAll("thead th");
 
-        headerCells.forEach((th, index) => {
+        headerEl.forEach((th, index) => {
+          const colIndex = index + 1;
+          const cells = table.querySelectorAll(`tbody td:nth-child(${colIndex})`);
+
           if (th.classList.contains("blur-col")) {
-            const colIndex = index + 1; // nth-child는 1부터 시작
-
-            // 해당 열 전체 blur 처리
-            const cellsToBlur = table.querySelectorAll(`tbody td:nth-child(${colIndex})`);
-
-            cellsToBlur.forEach((cell) => {
+            cells.forEach((cell) => {
               cell.classList.add("type-blur");
+            });
+
+            const middleIndex = Math.floor(cells.length / 2);
+            const middleCell = cells[middleIndex];
+
+            if (!middleCell.classList.contains("lock-icon")) {
+              middleCell.classList.add("lock-icon");
+
+              const text = middleCell.innerHTML;
+              middleCell.innerHTML = `
+          <div class="blur-area">${text}</div>
+          <div class="lock-icon-inner"></div>
+        `;
+            }
+          } else {
+            cells.forEach((cell) => {
+              cell.classList.remove("type-blur");
+
+              if (cell.classList.contains("lock-icon")) {
+                const blurArea = cell.querySelector(".blur-area");
+                if (blurArea) {
+                  cell.innerHTML = blurArea.innerHTML;
+                }
+
+                cell.classList.remove("lock-icon");
+              }
             });
           }
         });

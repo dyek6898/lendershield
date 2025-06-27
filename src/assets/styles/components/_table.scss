@@ -77,7 +77,25 @@
   }
 
   .type-blur {
+    position: relative;
     filter: blur(5px);
+    &.lock-icon {
+      filter: blur(0);
+      .blur-area {
+        filter: blur(5px);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        @include rem(width, 40);
+        @include rem(height, 40);
+        background: url("pathImages/icon/ico_lock.svg") center no-repeat;
+        background-size: 100% auto;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   // table custom - fixed 영역

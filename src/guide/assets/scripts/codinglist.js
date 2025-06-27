@@ -571,7 +571,7 @@ const projectPathsDev = {
   "pathPagesPrototype": "pages/prototype",
   "pathPagesMain": "pages/main",
   "pathPagesDetail": "pages/detail",
-  "pathPagesLogin": "pages/login",
+  "pathPagesLogin": "pages/login"
 };
 // END OF CODINGLIST PATHS DEV
 

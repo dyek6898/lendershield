@@ -1,19 +1,79 @@
 @use "../abstracts" as *;
 
-/* component button */
 .btn {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   vertical-align: middle;
-  @include rem(min-height, 40);
   @include rem(padding, 0 20);
+  border: 1px solid transparent;
   background: $bg-ffffff;
+  background-origin: border-box;
+  background-clip: border-box;
   @include rem(border-radius, 8);
+  &.btn-xl {
+    @include rem(min-width, 112);
+    @include rem(min-height, 64);
+    .btn-txt {
+      @include rem(font-size, 24);
+    }
+  }
+  &.btn-l {
+    @include rem(min-width, 112);
+    @include rem(min-height, 56);
+    .btn-txt {
+      @include rem(font-size, 16);
+    }
+  }
+  &.btn-m {
+    @include rem(min-width, 112);
+    @include rem(min-height, 48);
+    .btn-txt {
+      @include rem(font-size, 16);
+    }
+  }
+  &.btn-s {
+    @include rem(min-height, 36);
+    @include rem(padding-right, 12);
+    @include rem(padding-left, 12);
+    .btn-txt {
+      @include rem(font-size, 15);
+    }
+    > .ico-normal {
+      &:first-child {
+        @include rem(margin-left, -2px);
+      }
+      + .btn-txt {
+        @include rem(margin-left, 6px);
+      }
+    }
+  }
+  &.btn-xs {
+    min-width: 0;
+    @include rem(min-height, 28);
+    @include rem(border-radius, 4);
+    .btn-txt {
+      @include rem(font-size, 14);
+    }
+  }
+
+  &.border-radius {
+    @include rem(border-radius, 80);
+  }
+
+  &.btn-captcha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $font-555555;
+  }
 
   // button 공통 - 텍스트
   .btn-txt {
-    @include f14;
+    font-weight: 600;
+    line-height: 1;
     color: $font-000000;
   }
 
@@ -21,15 +81,11 @@
   [class^="ico-"] {
     @include rem(width, 15);
     @include rem(height, 15);
+    @include rem(margin-left, 6);
   }
-
-  // button 공통 - Hover, Focus
-  &:focus,
-  &:hover {
-    border-color: blue;
-    .btn-txt {
-      color: blue;
-    }
+  [class~="ico-normal"] {
+    @include rem(width, 20);
+    @include rem(height, 20);
   }
 
   // button 공통 - Full
@@ -40,17 +96,181 @@
 
   // button 스타일 - Primary
   &.btn-primary {
-    border-color: blue;
-    background: blue;
+    border-color: transparent;
+    background: $bg-090a3c;
     .btn-txt {
       color: $font-ffffff;
     }
     &:focus,
     &:hover {
-      background: $font-ffffff;
+      background: #253460;
+    }
+    &:disabled {
+      background: rgba(54, 77, 142, 0.1);
       .btn-txt {
-        color: blue;
+        color: #f5f5f5;
       }
+    }
+  }
+  // button 스타일 - Secondary
+  &.btn-secondary {
+    border-color: transparent;
+    background: $bg-eeeeee;
+    .btn-txt {
+      color: #364d8e;
+    }
+    &:focus,
+    &:hover {
+      background-color: $bg-eeeeee;
+    }
+    &:disabled {
+      background: rgba(233, 233, 233, 1);
+      .btn-txt {
+        color: rgba(196, 196, 196, 1);
+      }
+    }
+  }
+  // button 스타일 - Link
+  &.btn-link {
+    border-color: $line-090a3c;
+    .btn-txt {
+      color: $font-111111;
+    }
+    &:focus,
+    &:hover {
+      background-color: $bg-ffffff;
+    }
+    &:disabled {
+      border-color: #d4d8e2;
+      background: rgba(54, 77, 142, 0.1);
+      .btn-txt {
+        color: rgba(196, 196, 196, 1);
+      }
+    }
+  }
+  // button 스타일 - Link
+  &.btn-link02 {
+    border-color: rgba(217, 217, 217, 1);
+    background: rgba(255, 255, 255, 1);
+    .btn-txt {
+      color: rgba(54, 77, 142, 1);
+    }
+  }
+  // button 스타일 - Link
+  &.btn-input {
+    @include rem(padding-right, 10);
+    @include rem(padding-left, 10);
+    @include rem(border-radius, 6);
+    background: #939cb5;
+    &:disabled {
+      background: rgba(122, 141, 168, 0.4);
+    }
+    .btn-txt {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  &.btn-more {
+    border-radius: 100vmin;
+    border-color: rgba(212, 216, 226, 1);
+    .btn-txt {
+      font-weight: 500;
+      @include rem(font-size, 15);
+      color: rgba(73, 75, 85, 1);
+    }
+  }
+  &.btn-round {
+    @include rem(min-width, 384);
+    @include rem(border-radius, 80);
+    @include mobile {
+      @include rem(min-width, 320);
+      .btn-txt {
+        @include f14();
+      }
+    }
+  }
+  &.btn-down {
+    border: 1px solid #3a66c9;
+    .btn-txt {
+      color: #3a66c9;
+    }
+    &:disabled {
+      border-color: #d4d8e2;
+      background: rgba(54, 77, 142, 0.1);
+      .btn-txt {
+        color: rgba(196, 196, 196, 1);
+      }
+    }
+  }
+  &.btn-exception {
+    border-color: transparent;
+    background: #4980fb;
+    .btn-txt {
+      color: #ffffff;
+    }
+  }
+
+  &[class*="btn-textlink"] {
+    .btn-txt {
+      font-weight: 400;
+      @include rem(font-size, 16);
+      color: rgba(67, 67, 67, 1);
+      + .ico-normal {
+        @include rem(margin-left, 2);
+      }
+    }
+    .ico-normal {
+      + .btn-txt {
+        @include rem(margin-left, 4);
+      }
+    }
+    &.btn-s02 {
+      .btn-txt {
+        @include rem(font-size, 14);
+        color: rgba(157, 157, 157, 1);
+      }
+    }
+  }
+  // input 스타일의 button
+  &.type-input {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    @include rem(height, 48);
+    @include rem(margin-left, 0);
+    @include rem(padding, 0 16);
+    border: 1px solid #d9d9d9;
+    align-items: center;
+    justify-content: left;
+    .btn-txt {
+      @include f14();
+      color: #555555;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      @include rem(right, 16);
+      @include rem(width, 20);
+      @include rem(height, 20);
+      background: url("pathImages/common/ico_arrow_btn.svg") no-repeat;
+      background-size: 100% auto;
+      transform: translateY(-50%);
+    }
+
+    &:disabled {
+      background: $bg-f5f5f5;
+      .btn-txt {
+        color: #9d9d9d;
+      }
+    }
+  }
+  &.btn-textlink02 {
+    .btn-txt {
+      font-weight: 400;
+      @include rem(font-size, 16);
+      color: rgba(67, 67, 67, 1);
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
   }
 }
