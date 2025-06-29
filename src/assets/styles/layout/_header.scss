@@ -1,25 +1,24 @@
 @use "../abstracts" as *;
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  transition: all 0.3s ease;
+  @include rem(height, 80);
   border-bottom: 1px solid $line-dddddd;
-  &.on {
-    transform: translate3d(0, -110%, 0);
-    .header-inner {
-    }
-  }
+  background: $bg-ffffff;
+  z-index: $zindex-header;
   .header-inner {
-    width: 100%;
-    transition: all 0.3s ease;
+    @include rem(max-width, 1680);
+    margin: 0 auto;
+    @include rem(padding, 24 20);
   }
 
   // Header top
   .header-top {
     display: flex;
     justify-content: space-between;
-    max-width: 1440px;
-    margin: 0 auto;
     @include rem(padding, 10);
     .top-list {
       display: flex;
@@ -36,7 +35,6 @@
   // Header content
   .header-content {
     position: relative;
-    width: 100%;
   }
 
   // Gnb
@@ -44,9 +42,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include rem(max-width, 1680);
-    margin: 0 auto;
-    @include rem(padding, 24 20);
 
     // logo
     .gnb-logo {
@@ -77,12 +72,169 @@
             @include rem(margin-left, 24);
           }
         }
-        a {
-          @include rem(padding, 8 20);
-          @include f16(700);
-          @include rem(border-radius, 8);
-          + a {
-            @include rem(margin-left, 12);
+        .component-btns {
+          a {
+            @include rem(padding, 8 20);
+            @include f16(700);
+            @include rem(border-radius, 8);
+            + a {
+              @include rem(margin-left, 12);
+            }
+          }
+        }
+        &.login-info {
+          display: none;
+          align-items: center;
+          .btn-area {
+            position: relative;
+            .btn-alarm {
+              @include rem(width, 24);
+              @include rem(height, 24);
+              padding: 0;
+              background: url("pathImages/icon/ico_alarm.svg") center no-repeat;
+              background-size: 100% auto;
+            }
+            .alarm-info {
+              display: none;
+              position: absolute;
+              @include rem(top, 40);
+              right: 0;
+              @include rem(width, 240);
+              @include rem(max-width, 240);
+              @include rem(padding, 16);
+              border: 1px solid $line-dddddd;
+              box-shadow: 0px 8px 10px 4px rgba(0, 0, 0, 0.05);
+              @include rem(border-radius, 6);
+              background: $bg-ffffff;
+              .tit-area {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .type-tit {
+                  color: $font-111111;
+                  @include f16(600);
+                }
+              }
+              .text-area {
+                @include rem(margin-top, 24);
+                flex-direction: column;
+                .list-item {
+                  color: $font-111111;
+                  @include f14();
+                  &.dot {
+                    position: relative;
+                    @include rem(margin-left, 9);
+                    @include rem(padding-left, 12);
+                    &::before {
+                      content: "";
+                      position: absolute;
+                      @include rem(top, 9);
+                      left: 0;
+                      @include rem(width, 3);
+                      @include rem(height, 3);
+                      border-radius: 100%;
+                      background: $bg-111111;
+                    }
+                  }
+                  + .list-item {
+                    @include rem(margin-top, 8);
+                  }
+                }
+                .btn-link {
+                  display: block;
+                  @include rem(margin-top, 8);
+                  color: $font-090a3c;
+                  @include f14(600);
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+          .info-area {
+            position: relative;
+            display: flex;
+            @include rem(margin-left, 24);
+            @include rem(padding, 4 4 4 20);
+            @include rem(border-radius, 8);
+            background: $bg-090a3c;
+            align-items: center;
+            .type-user {
+              color: $font-ffffff;
+              @include f16(600);
+            }
+            .btn-select {
+              @include rem(margin-left, 20);
+              @include rem(padding, 6 34 6 12);
+              color: $font-090a3c;
+              @include f12();
+              background: $bg-ffffff url("pathImages/icon/ico_arr_bottom_small.svg") center right 1.2rem no-repeat;
+              @include rem(background-size, 12 12);
+            }
+          }
+          .select-list {
+            display: none;
+            position: absolute;
+            @include rem(top, 48);
+            right: 0;
+            @include rem(width, 240);
+            @include rem(padding, 16);
+            border: 1px solid $line-dddddd;
+            @include rem(border-radius, 6);
+            background: $bg-ffffff;
+            .list-item {
+              @include rem(padding, 10 10 10 38);
+              span {
+                color: $font-444444;
+                @include f14();
+              }
+              &.info {
+                background: url("pathImages/icon/ico_user.svg") center left 1rem no-repeat;
+                @include rem(background-size, 20 20);
+              }
+              &.good {
+                background: url("pathImages/icon/ico_good.svg") center left 1rem no-repeat;
+                @include rem(background-size, 20 20);
+              }
+              &.interest {
+                background: url("pathImages/icon/ico_heart.svg") center left 1rem no-repeat;
+                @include rem(background-size, 20 20);
+              }
+              &.inquiry {
+                background: url("pathImages/icon/ico_inquiry.svg") center left 1rem no-repeat;
+                @include rem(background-size, 20 20);
+              }
+              &:hover {
+                cursor: pointer;
+                &.info {
+                  background: $bg-dae1fa url("pathImages/icon/ico_user.svg") center left 1rem no-repeat;
+                  @include rem(background-size, 20 20);
+                }
+                &.good {
+                  background: $bg-dae1fa url("pathImages/icon/ico_good.svg") center left 1rem no-repeat;
+                  @include rem(background-size, 20 20);
+                }
+                &.interest {
+                  background: $bg-dae1fa url("pathImages/icon/ico_heart.svg") center left 1rem no-repeat;
+                  @include rem(background-size, 20 20);
+                }
+                &.inquiry {
+                  background: $bg-dae1fa url("pathImages/icon/ico_inquiry.svg") center left 1rem no-repeat;
+                  @include rem(background-size, 20 20);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.login {
+    .gnb-wrap {
+      .utill-area {
+        .utill-item {
+          display: none;
+          &.login-info {
+            display: flex;
           }
         }
       }

@@ -180,6 +180,7 @@ body {
 }
 #content {
   min-height: 100%;
+  @include rem(padding-top, 80px);
 }
 
 .content-inner {

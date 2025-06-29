@@ -217,7 +217,7 @@
       display: flex;
       align-items: center;
       .chart-list {
-        width: calc(100% / 3);
+        width: calc(100% / 3 - 18px);
         + .chart-list {
           @include rem(margin-left, 28);
         }
@@ -230,6 +230,9 @@
         width: 100%;
         @include rem(height, 235);
         @include rem(margin-top, 22);
+        canvas {
+          height: 100% !important;
+        }
       }
     }
   }
