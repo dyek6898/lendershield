@@ -1300,9 +1300,9 @@
 
               const text = middleCell.innerHTML;
               middleCell.innerHTML = `
-          <div class="blur-area">${text}</div>
-          <div class="lock-icon-inner"></div>
-        `;
+              <div class="blur-area">${text}</div>
+              <div class="lock-icon-inner"></div>
+            `;
             }
           } else {
             cells.forEach((cell) => {
@@ -1325,17 +1325,18 @@
       const ctx = document.getElementById("lineChart").getContext("2d");
 
       const labels = ["2024/05/23", "2024/06/15", "2024/07/10", "2024/08/01", "2024/08/29", "2024/09/20", "2024/10/15", "2024/11/10", "2024/12/12", "2025/01/05", "2025/02/01", "2025/03/01", "2025/03/27", "2025/04/20", "2025/05/15", "2025/06/10"];
+      const datas = [4100, 3800, 3700, 3600, 3400, 3200, 3000, 2900, 2700, 2800, 2600, 2500, 2700, 3000, 2800, 2800];
 
       const data = {
         labels: labels,
         datasets: [
           {
             label: "Chart Data",
-            data: [4100, 3800, 3700, 3600, 3400, 3200, 3000, 2900, 2700, 2800, 2600, 2500, 2700, 3000, 2800, 2800],
+            data: datas,
             fill: true,
             borderColor: "darkgreen",
             backgroundColor: "rgba(0, 128, 0, 0.1)",
-            tension: 0.4,
+            tension: 0,
             pointRadius: 0,
             borderWidth: 4,
           },
@@ -1346,34 +1347,40 @@
         type: "line",
         data: data,
         options: {
-          layout: {
-            padding: {
-              bottom: 20, // x축 레이블이 y축 숫자랑 겹치지 않게 여백 확보
-            },
-          },
-          responsive: true,
           scales: {
-            x: {
-              ticks: {
-                autoSkip: true,
-                maxTicksLimit: 5,
-                color: "#333",
-              },
-              grid: {
-                display: false,
-              },
-            },
             y: {
-              min: 2500,
-              max: 4000,
+              beginAtZero: false,
+              suggestedMin: 2000,
+              suggestedMax: 4500,
               ticks: {
                 stepSize: 500,
-                callback: (value) => value.toLocaleString(),
-                color: "#333",
+                callback: function (value) {
+                  if (value === 2000 || value === 4500) return "";
+                  return value.toLocaleString();
+                },
+                color: "#999999", // 눈금 글씨 색 (원하는 경우)
+              },
+              grid: {
+                display: false, // ✅ 줄눈 제거
+                drawBorder: false, // y축 라인도 숨기고 싶으면 true
+              },
+            },
+            x: {
+              ticks: {
+                maxRotation: 0, // ✅ 라벨이 기울어지지 않게
+                autoSkip: true, // ✅ 라벨 자동 생략
+                maxTicksLimit: 5, // ✅ 최대 라벨 수 제한 (예: 5개 정도만)
+                color: "#999999",
               },
               grid: {
                 display: false,
+                drawBorder: false,
               },
+            },
+          },
+          elements: {
+            line: {
+              tension: 0.4,
             },
           },
           plugins: {
@@ -1395,17 +1402,18 @@
       gradient.addColorStop(1, "rgba(0, 102, 255, 0)");
 
       const labels02 = ["2024/05/23", "2024/06/15", "2024/07/10", "2024/08/01", "2024/08/29", "2024/09/20", "2024/10/15", "2024/11/10", "2024/12/12", "2025/01/05", "2025/02/01", "2025/03/01", "2025/03/27", "2025/04/20", "2025/05/15", "2025/06/10"];
+      const datas02 = [4100, 3800, 3700, 3600, 3400, 3200, 3000, 2900, 2700, 2800, 2600, 2500, 2700, 3000, 2800, 2800];
 
       const data02 = {
         labels: labels02,
         datasets: [
           {
             label: "잔액 추이",
-            data: [4100, 3800, 3700, 3600, 3400, 3200, 3000, 2900, 2700, 2800, 2600, 2500, 2700, 3000, 2800, 2800],
+            data: datas02,
             fill: true,
             borderColor: "#0066ff",
             backgroundColor: gradient,
-            tension: 0.4,
+            tension: 0,
             pointRadius: 0,
             borderWidth: 3,
           },
@@ -1416,32 +1424,46 @@
         type: "line",
         data: data02,
         options: {
-          layout: {
-            padding: { bottom: 20 },
-          },
-          responsive: true,
           scales: {
-            x: {
-              ticks: {
-                autoSkip: true,
-                maxTicksLimit: 5,
-                color: "#333",
-              },
-              grid: { display: false },
-            },
             y: {
-              min: 2500,
-              max: 4000,
+              beginAtZero: false,
+              suggestedMin: 2000,
+              suggestedMax: 4500,
               ticks: {
                 stepSize: 500,
-                callback: (value) => value.toLocaleString(),
-                color: "#333",
+                callback: function (value) {
+                  if (value === 2000 || value === 4500) return "";
+                  return value.toLocaleString();
+                },
+                color: "#999999", // 눈금 글씨 색 (원하는 경우)
               },
-              grid: { display: false },
+              grid: {
+                display: false, // ✅ 줄눈 제거
+                drawBorder: false, // y축 라인도 숨기고 싶으면 true
+              },
+            },
+            x: {
+              ticks: {
+                maxRotation: 0, // ✅ 라벨이 기울어지지 않게
+                autoSkip: true, // ✅ 라벨 자동 생략
+                maxTicksLimit: 5, // ✅ 최대 라벨 수 제한 (예: 5개 정도만)
+                color: "#999999",
+              },
+              grid: {
+                display: false,
+                drawBorder: false,
+              },
+            },
+          },
+          elements: {
+            line: {
+              tension: 0.4,
             },
           },
           plugins: {
-            legend: { display: false },
+            legend: {
+              display: false,
+            },
           },
         },
       };
@@ -1462,13 +1484,14 @@
       blueGradient.addColorStop(1, "rgba(0, 102, 255, 0)");
 
       const labels03 = ["2024/05/23", "2024/08/29", "2024/12/12", "2025/03/27"];
+      const datas03 = [2500, 3300, 2700, 3000];
 
       const data03 = {
         labels: labels03,
         datasets: [
           {
             label: "Green Data",
-            data: [2500, 3300, 2700, 3000],
+            data: datas03,
             backgroundColor: greenGradient,
             barThickness: "flex", // 자동 너비
             categoryPercentage: 0.6, // 간격 넓히기
@@ -1491,22 +1514,32 @@
         options: {
           responsive: true,
           scales: {
-            x: {
-              stacked: false,
-              grid: { display: false },
+            y: {
+              beginAtZero: false,
+              suggestedMin: 2000,
+              suggestedMax: 4500,
               ticks: {
-                color: "#333",
+                maxRotation: 0, // ✅ 라벨이 기울어지지 않게
+                stepSize: 500,
+                callback: function (value) {
+                  if (value === 2000 || value === 4500) return "";
+                  return value.toLocaleString();
+                },
+                color: "#999999", // 눈금 글씨 색 (원하는 경우)
+              },
+              grid: {
+                display: false, // ✅ 줄눈 제거
+                drawBorder: false, // y축 라인도 숨기고 싶으면 true
               },
             },
-            y: {
-              min: 2500,
-              max: 4000,
-              ticks: {
-                stepSize: 500,
-                callback: (value) => value.toLocaleString(),
-                color: "#333",
+            x: {
+              grid: {
+                display: false, // ✅ x축 줄눈도 제거
+                drawBorder: false,
               },
-              grid: { display: false },
+              ticks: {
+                color: "#999999", // x축 날짜 색상
+              },
             },
           },
           plugins: {
