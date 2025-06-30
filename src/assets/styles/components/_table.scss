@@ -121,27 +121,11 @@
 
   // table custom - scroll 영역
   &.table-scroll {
-    overflow: hidden;
     overflow-x: auto;
-    background-image:
-      /* Shadows */
-      linear-gradient(to right, white, white),
-      linear-gradient(to right, white, white),
-      /* Shadow covers */ linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0)),
-      linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0));
-    background-position:
-      left center,
-      right center,
-      left center,
-      right center;
-    background-repeat: no-repeat;
-    background-color: white;
-    @include rem(background-size, 20 100%, 20 100%, 20 100%, 20 100%);
-    /* Opera doesn't support this in the shorthand */
-    background-attachment: local, local, scroll, scroll;
+    overflow-x: scroll;
+    white-space: nowrap;
     table {
-      table-layout: fixed;
-      mix-blend-mode: multiply;
+      @include rem(width, 1920);
     }
   }
 

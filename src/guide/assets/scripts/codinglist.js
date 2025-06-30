@@ -580,20 +580,24 @@ const projectPathsBuild = {
   "pathStyles": "assets/styles",
   "pathScripts": "assets/scripts",
   "pathFonts": "assets/fonts",
+  "pathImages": "assets/images",
   "pathGuideStyles": "guide/assets/styles",
   "pathGuideScripts": "guide/assets/scripts",
   "pathGuideImages": "guide/assets/images",
   "pathGuideImagesMailform": "guide/assets/images/mailform",
   "pathGuideImagesIcon": "guide/assets/images/ico",
   "pathGuideComponents": "guide/pages/components",
+  "pathGuideFoundation": "guide/pages/foundation",
+  "pathGuideTemplate": "guide/pages/template",
   "pathGuideComponentsElement": "guide/pages/components/element",
   "pathGuideConvention": "guide/pages/convention",
   "pathGuideMailform": "guide/pages/mailform",
   "pathGuideInclude": "guide/pages/include",
   "pathPagesInclude": "pages/include",
+  "pathPagesPrototype": "pages/prototype",
   "pathPagesMain": "pages/main",
-  "pathPagesLogin": "pages/detail",
-  "pathPagesDetail": "pages/login",
+  "pathPagesDetail": "pages/detail",
+  "pathPagesLogin": "pages/login"
 };
 // END OF CODINGLIST PATHS BUILD
 
