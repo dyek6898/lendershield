@@ -212,7 +212,7 @@ body {
     @include f18();
     text-align: center;
   }
-  + .login-area {
+  + .form-area {
     @include rem(margin-top, 40);
   }
 }

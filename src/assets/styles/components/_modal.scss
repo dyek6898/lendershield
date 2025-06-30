@@ -9,7 +9,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: $zindex-dimm;
     display: none;
     background-color: rgba(0, 0, 0, 0.6);
     transition: background-color 1s;
@@ -24,7 +24,7 @@
     left: 50%;
     @include rem(width, 480);
     @include rem(border-radius, 10);
-    z-index: 110;
+    z-index: $zindex-modal;
     background-color: rgba(250, 250, 250);
     @include f18;
     flex-direction: column;
@@ -33,13 +33,11 @@
     transform: translate(-50%, -50%);
     //opacity: 0;
     .modal-header {
-      @include rem(margin, 20 0);
-      @include rem(height, 30);
-      text-align: center;
+      width: 100%;
       .modal-tit {
         @include rem(border-radius, 10);
-        color: $font-333333;
-        @include f16;
+        color: $font-111111;
+        @include f18(600);
       }
     }
     .modal-content {
@@ -142,6 +140,37 @@
       }
       .modal-content {
         max-height: 100%;
+      }
+    }
+  }
+  // 휴대폰 인증
+  &.certify {
+    .modal-container {
+      .modal-content {
+        @include rem(margin, 24 0 0);
+        .component-form {
+          .form-element {
+            .form-group {
+              align-items: baseline;
+            }
+            .component-input {
+            }
+            .btn-confirm {
+              @include rem(width, 120);
+              @include rem(height, 48);
+            }
+          }
+        }
+        .component-btns {
+          @include rem(margin-top, 12);
+          text-align: right;
+          .btn-resend {
+            color: $font-111111;
+            @include f14(600);
+            text-decoration: underline;
+            text-underline-position: from-font;
+          }
+        }
       }
     }
   }

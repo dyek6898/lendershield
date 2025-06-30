@@ -189,6 +189,7 @@
   // input 공통 - 정보 영역
   .input-info {
     @include f12();
+    text-align: left;
   }
 
   // input 컨텐츠 간격

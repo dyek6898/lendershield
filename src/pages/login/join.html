@@ -27,7 +27,7 @@
 
       <div class="bg-f5f6fa" id="container">
         <div id="content">
-          <div class="login-wrap">
+          <div class="login-wrap join">
             <div class="content-inner wid-756">
               <hgroup class="page-tit-group">
                 <h2 class="page-tit"> 회원가입 </h2>
@@ -36,7 +36,7 @@
                   더 많은 서비스를 제공을 준비중 입니다.
                 </span>
               </hgroup>
-              <div class="login-area">
+              <div class="form-area">
                 <div class="component-form">
                   <!-- 아이디 -->
                   <div class="form-element">
@@ -46,8 +46,8 @@
                         <i class="ico-required-mark" role="img" aria-label="필수"></i>
                       </span>
                     </label>
-                    <div class="form-group"
-                      ><div class="component-input input-invalid">
+                    <div class="form-group">
+                      <div class="component-input input-invalid">
                         <div class="input-field">
                           <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" />
                         </div>
@@ -104,7 +104,7 @@
                           <input type="text" id="temp_input_0003" placeholder="휴대폰 번호를 입력해 주세요." />
                         </div>
                       </div>
-                      <button class="btn btn-s btn-confirm">
+                      <button class="btn btn-s btn-confirm modal-btn01">
                         <span class="btn-txt">발송</span>
                       </button>
                     </div>
@@ -116,8 +116,51 @@
         </div>
       </div>
 
+      <!-- 류대폰 인증 펍업 -->
+      <div class="layer-wrap">
+        <div class="component-modal certify" data-props-dimm-click="true">
+          <div class="modal-dimm"></div>
+          <div class="modal-frame">
+            <div class="modal-container">
+              <div class="modal-header">
+                <h3 class="modal-tit">Modal Example</h3>
+              </div>
+              <div class="modal-content">
+                <div class="component-form">
+                  <!-- 휴대폰번호(type02) -->
+                  <div class="form-element">
+                    <div class="form-group">
+                      <div class="component-input input-invalid">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_0003" placeholder="휴대폰 번호를 입력해 주세요." />
+                        </div>
+                        <div class="input-info">인증코드를 다시 입력해주세요</div>
+                      </div>
+                      <button class="btn btn-s btn-confirm modal-btn01">
+                        <span class="btn-txt">인증</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="component-btns">
+                  <button class="btn-resend">재발송</button>
+                </div>
+              </div>
+              <button class="modal-close"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       @@include('pathPagesInclude/_footer.html')
     </div>
-    <div class="dimm"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const modalBtn01 = document.querySelector(".modal-btn01");
+        modalBtn01.addEventListener("click", () => {
+          document.querySelector(".certify").ui.open();
+        });
+      });
+    </script>
   </body>
 </html>

@@ -322,11 +322,12 @@
 .page-login {
   background: $bg-f5f6fa;
   #content {
-    height: calc(100vh - 293px);
+    // height: calc(100vh - 293px);
   }
 }
 .login-wrap {
   height: 100%;
+  @include rem(margin-top, 160);
   .content-inner {
     height: 100%;
   }
@@ -399,5 +400,9 @@
         @include f14(400);
       }
     }
+  }
+  // 회원가입
+  &.join {
+    margin-top: 0;
   }
 }

@@ -89,6 +89,7 @@ $zindex-base: 0; // 기본 z-index
 $zindex-loading: $zindex-base + 3200; // progress indicator, loading spinner
 $zindex-notification: $zindex-base + 3100; // toast, snackbar
 $zindex-modal: $zindex-base + 3000; // dialog, modal, lightbox
+$zindex-dimm: $zindex-base + 2800;
 $zindex-floating: $zindex-base + 2500; // FAB, floating banner
 $zindex-header: $zindex-base + 2000; // GNB, header
 $zindex-side-area: $zindex-base + 1000; // drawer, panel, side navigation
