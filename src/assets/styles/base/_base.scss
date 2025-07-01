@@ -212,7 +212,7 @@ body {
     @include f18();
     text-align: center;
   }
-  + .form-area {
+  + .round-box {
     @include rem(margin-top, 40);
   }
 }

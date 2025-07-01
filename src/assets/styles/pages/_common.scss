@@ -1,5 +1,44 @@
 @use "../abstracts" as *;
 
+// 전체 공통
+// 라운드 박스
+.round-box {
+  display: flex;
+  height: 100%;
+  @include rem(padding, 80 130);
+  @include rem(border-radius, 16);
+  background: $bg-ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .box-tit {
+    width: 100%;
+    .type-tit {
+      display: block;
+      width: 100%;
+      @include rem(padding-bottom, 16);
+      color: $font-111111;
+      @include f20(600);
+      border-bottom: 1px solid $line-111111;
+      text-align: left;
+    }
+    + .component-form {
+      @include rem(margin-top, 20);
+    }
+  }
+  .login-tit {
+    .logo {
+      @include rem(width, 346);
+      @include rem(height, 52);
+      background: url("pathImages/icon/ico_logo.svg") center center no-repeat;
+      background-size: 100% auto;
+    }
+    + .component-form {
+      @include rem(margin-top, 80);
+    }
+  }
+}
+
 // 상세페이지
 .datail-wrap {
   @include rem(margin-top, 80);
@@ -339,35 +378,15 @@
     height: calc(100vh - 293px);
   }
 }
-.login-wrap {
+
+.form-wrap {
   height: 100%;
   // @include rem(margin-top, 160);
   .content-inner {
     height: 100%;
   }
-  .form-area {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .login-tit {
-      .logo {
-        @include rem(width, 346);
-        @include rem(height, 52);
-        background: url("pathImages/icon/ico_logo.svg") center center no-repeat;
-        background-size: 100% auto;
-      }
-      + .component-form {
-        @include rem(margin-top, 80);
-      }
-    }
-  }
   .component-form {
     width: 100%;
-    @include rem(padding, 80 130);
-    @include rem(border-radius, 16);
-    background: $bg-ffffff;
     .btn-login {
       width: 100%;
       @include rem(height, 56);

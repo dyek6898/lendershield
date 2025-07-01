@@ -246,9 +246,9 @@
   // input 상태 - 읽기 전용
   &.input-readonly {
     .input-field {
-      background: gray;
+      background: $bg-f5f6fa;
       input {
-        background: lightgray;
+        background: $bg-f5f6fa;
       }
     }
   }

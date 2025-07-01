@@ -26,6 +26,7 @@
   // tab 공통 -  body 영역
   .tab-body {
     position: relative;
+    @include rem(margin-top, 40);
   }
 
   // tab 공통 -  content 영역
@@ -35,12 +36,6 @@
     color: black;
     &.show {
       display: block;
-    }
-    .content-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      @include rem(padding, 40);
     }
   }
 
