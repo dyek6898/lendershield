@@ -54,6 +54,13 @@
         @include f14;
         color: $font-555555;
       }
+      .content-tit {
+        color: $font-111111;
+        @include f18(600);
+        + .content-txt {
+          @include rem(margin-top, 8);
+        }
+      }
       .content-txt {
         display: block;
         color: $font-111111;

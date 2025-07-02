@@ -16,13 +16,18 @@
     .type-tit {
       display: block;
       width: 100%;
-      @include rem(padding-bottom, 16);
       color: $font-111111;
       @include f20(600);
-      border-bottom: 1px solid $line-111111;
       text-align: left;
+      &.line {
+        @include rem(padding-bottom, 16);
+        border-bottom: 1px solid $line-111111;
+      }
     }
     + .component-form {
+      @include rem(margin-top, 20);
+    }
+    + .column-group {
       @include rem(margin-top, 20);
     }
   }
@@ -441,5 +446,51 @@
   // 회원가입
   &.join {
     margin-top: 0;
+  }
+  &.mypage {
+    .round-box {
+      .column-group {
+        width: 100%;
+        .column {
+          width: 100%;
+          .logout-area {
+            a {
+              display: flex;
+              @include rem(padding, 20);
+              @include rem(border-radius, 8);
+              background: $bg-f5f6fa url("pathImages/icon/ico_arr_rigth_small.svg") center right 2rem no-repeat;
+              @include rem(background-size, 16 16);
+              flex-direction: column;
+              span {
+                color: $font-111111;
+                @include f14();
+                &.type-tit {
+                  @include f16(600);
+                }
+                + span {
+                  @include rem(margin-top, 8);
+                }
+              }
+            }
+          }
+          .component-btns {
+            @include rem(margin-top, 20);
+            .btns-row {
+              .btn {
+                width: 50%;
+              }
+            }
+          }
+          &.line {
+            @include rem(margin-top, 40);
+            @include rem(padding-top, 40);
+            border-top: 1px solid $line-dddddd;
+          }
+          + .column {
+            @include rem(margin-top, 12);
+          }
+        }
+      }
+    }
   }
 }

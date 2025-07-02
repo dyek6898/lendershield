@@ -27,22 +27,25 @@
 
       <div class="bg-f5f6fa" id="container">
         <div id="content">
-          <div class="form-wrap">
+          <div class="form-wrap mypage">
             <div class="content-inner wid-756">
               <hgroup class="page-tit-group">
                 <h2 class="page-tit"> 내 정보 </h2>
               </hgroup>
               <div class="component-tab" data-active="tab1">
                 <div class="tab-head">
-                  <button type="button" class="tab-label" data-tab-value="tab1">TAB 1</button>
-                  <button type="button" class="tab-label" data-tab-value="tab2">TAB 2</button>
-                  <button type="button" class="tab-label" data-tab-value="tab3">TAB 3</button>
+                  <button type="button" class="tab-label" data-tab-value="tab1">내 정보</button>
+                  <button type="button" class="tab-label" data-tab-value="tab2">보안</button>
+                  <button type="button" class="tab-label" data-tab-value="tab3">관심 기업 리스트</button>
+                  <button type="button" class="tab-label" data-tab-value="tab4">알림</button>
+                  <button type="button" class="tab-label" data-tab-value="tab5">요금제 정보</button>
+                  <button type="button" class="tab-label" data-tab-value="tab6">결제 내역</button>
                 </div>
                 <div class="tab-body">
                   <div class="tab-content" data-tab-value="tab1">
                     <div class="round-box">
                       <div class="box-tit">
-                        <span class="type-tit">프로필 설정</span>
+                        <span class="type-tit line">프로필 설정</span>
                       </div>
                       <div class="component-form">
                         <!-- 아이디 -->
@@ -56,7 +59,7 @@
                           <div class="form-group">
                             <div class="component-input">
                               <div class="input-field">
-                                <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" readonly />
+                                <input type="text" id="temp_input_valid_0001" placeholder="홍길동" readonly />
                               </div>
                             </div>
                           </div>
@@ -72,7 +75,7 @@
                           <div class="form-group">
                             <div class="component-input">
                               <div class="input-field">
-                                <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" readonly />
+                                <input type="text" id="temp_input_valid_0001" placeholder="홍길동" readonly />
                               </div>
                             </div>
                           </div>
@@ -88,7 +91,7 @@
                           <div class="form-group">
                             <div class="component-input">
                               <div class="input-field">
-                                <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" readonly />
+                                <input type="text" id="temp_input_valid_0001" placeholder="유동산" readonly />
                               </div>
                             </div>
                           </div>
@@ -104,7 +107,7 @@
                           <div class="form-group">
                             <div class="component-input">
                               <div class="input-field">
-                                <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" readonly />
+                                <input type="text" id="temp_input_valid_0001" placeholder="연구원" readonly />
                               </div>
                             </div>
                           </div>
@@ -120,8 +123,31 @@
                           <div class="form-group">
                             <div class="component-input">
                               <div class="input-field">
-                                <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" readonly />
+                                <input type="text" id="temp_input_valid_0001" placeholder="전략기획본부" readonly />
                               </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column-group">
+                        <div class="column line">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">로그아웃</span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column line">
+                          <span class="column-tit">지인 추천 이벤트</span>
+                          <div iv class="component-btns">
+                            <div class="btns-row">
+                              <a href="#" type="button" class="btn btn-s btn-link">
+                                <span class="btn-txt">자세히 보기</span>
+                              </a>
+                              <button type="button" class="btn btn-s btn-link modal-btn01">
+                                <span class="btn-txt">내 초대 링크 받기</span>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -130,21 +156,24 @@
                   </div>
                   <div class="tab-content" data-tab-value="tab2">
                     <div class="round-box">
-                      <div class="component-form">
-                        <!-- 아이디 -->
-                        <div class="form-element">
-                          <label for="temp_input_0001" class="input-label">
-                            <span class="label-txt">
-                              회사 이메일
-                              <i class="ico-required-mark" role="img" aria-label="필수"></i>
-                            </span>
-                          </label>
-                          <div class="form-group">
-                            <div class="component-input">
-                              <div class="input-field">
-                                <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" />
-                              </div>
-                            </div>
+                      <div class="box-tit">
+                        <span class="type-tit">보안</span>
+                      </div>
+                      <div class="column-group">
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">비밀번호 변경</span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">계정 탈퇴하기 </span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -152,21 +181,99 @@
                   </div>
                   <div class="tab-content" data-tab-value="tab3">
                     <div class="round-box">
-                      <div class="component-form">
-                        <!-- 아이디 -->
-                        <div class="form-element">
-                          <label for="temp_input_0001" class="input-label">
-                            <span class="label-txt">
-                              회사 이메일
-                              <i class="ico-required-mark" role="img" aria-label="필수"></i>
-                            </span>
-                          </label>
-                          <div class="form-group">
-                            <div class="component-input">
-                              <div class="input-field">
-                                <input type="text" id="temp_input_valid_0001" placeholder="이메일을 입력해 주세요" />
-                              </div>
-                            </div>
+                      <div class="box-tit">
+                        <span class="type-tit">보안</span>
+                      </div>
+                      <div class="column-group">
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">비밀번호 변경</span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">계정 탈퇴하기 </span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content" data-tab-value="tab4">
+                    <div class="round-box">
+                      <div class="box-tit">
+                        <span class="type-tit">보안</span>
+                      </div>
+                      <div class="column-group">
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">비밀번호 변경</span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">계정 탈퇴하기 </span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content" data-tab-value="tab5">
+                    <div class="round-box">
+                      <div class="box-tit">
+                        <span class="type-tit">보안</span>
+                      </div>
+                      <div class="column-group">
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">비밀번호 변경</span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">계정 탈퇴하기 </span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content" data-tab-value="tab6">
+                    <div class="round-box">
+                      <div class="box-tit">
+                        <span class="type-tit">보안</span>
+                      </div>
+                      <div class="column-group">
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">비밀번호 변경</span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="logout-area">
+                            <a href="#">
+                              <span class="type-tit">계정 탈퇴하기 </span>
+                              <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -178,36 +285,21 @@
           </div>
         </div>
       </div>
-
-      <!-- 류대폰 인증 펍업 -->
+      <!-- [팝업] 비회원 및 일반회원 로그인 -->
       <div class="layer-wrap">
-        <div class="component-modal certify" data-props-dimm-click="true">
+        <!-- 비회원 - 로그인 펍업 -->
+        <div class="component-modal link" data-props-dimm-click="true">
           <div class="modal-dimm"></div>
           <div class="modal-frame">
             <div class="modal-container">
-              <div class="modal-header">
-                <h3 class="modal-tit">Modal Example</h3>
-              </div>
               <div class="modal-content">
-                <div class="component-form">
-                  <!-- 휴대폰번호(type02) -->
-                  <div class="form-element">
-                    <div class="form-group">
-                      <div class="component-input input-invalid">
-                        <div class="input-field">
-                          <input type="text" id="temp_input_0003" placeholder="휴대폰 번호를 입력해 주세요." />
-                        </div>
-                        <div class="input-info">인증코드를 다시 입력해주세요</div>
-                      </div>
-                      <button class="btn btn-s btn-confirm modal-btn01">
-                        <span class="btn-txt">인증</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="component-btns">
-                  <button class="btn-resend">재발송</button>
-                </div>
+                <span class="content-tit">초대장이 발송됐습니다!</span>
+                <span class="content-txt">로그인 이후 사용 가능합니다.</span>
+              </div>
+              <div class="component-btns">
+                <button href="#" type="button" class="btn btn-full btn-primary">
+                  <span class="btn-txt">Pro로 업그레이드 하기</span>
+                </button>
               </div>
               <button class="modal-close"></button>
             </div>
@@ -221,7 +313,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         const modalBtn01 = document.querySelector(".modal-btn01");
         modalBtn01.addEventListener("click", () => {
-          document.querySelector(".certify").ui.open();
+          document.querySelector(".link").ui.open();
         });
       });
     </script>
