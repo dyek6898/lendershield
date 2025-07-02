@@ -225,6 +225,9 @@
                 span {
                   color: $font-444444;
                   @include f12();
+                  + span {
+                    @include rem(margin-left, 20);
+                  }
                 }
                 .type-desc {
                   color: $font-111111;
@@ -329,6 +332,7 @@
           @include rem(padding, 8 0);
           border-bottom: 1px solid $line-eeeeee;
           flex-direction: column;
+          cursor: pointer;
           span {
             color: $font-666666;
             @include f12();
