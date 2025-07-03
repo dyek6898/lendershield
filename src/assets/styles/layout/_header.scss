@@ -76,7 +76,7 @@
           a {
             @include rem(padding, 8 20);
             @include f16(700);
-            @include rem(border-radius, 8);
+            @include rem(border-radius, 10);
             + a {
               @include rem(margin-left, 12);
             }
@@ -155,7 +155,7 @@
             display: flex;
             @include rem(margin-left, 24);
             @include rem(padding, 4 4 4 20);
-            @include rem(border-radius, 8);
+            @include rem(border-radius, 10);
             background: $bg-090a3c;
             align-items: center;
             .type-user {

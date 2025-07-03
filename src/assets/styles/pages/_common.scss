@@ -100,7 +100,7 @@
       }
       .btn-download {
         @include rem(padding, 10 20);
-        @include rem(border-radius, 8);
+        @include rem(border-radius, 10);
         color: $font-ffffff;
         @include f14(600);
         background: $bg-14b426;
@@ -464,23 +464,31 @@
         width: 100%;
         .column {
           width: 100%;
-          .logout-area {
+          .column-item {
+            position: relative;
+            @include rem(border-radius, 10);
+            background: $bg-f5f6fa;
             a {
               display: flex;
               @include rem(padding, 20);
-              @include rem(border-radius, 8);
-              background: $bg-f5f6fa url("pathImages/icon/ico_arr_rigth_small.svg") center right 2rem no-repeat;
-              @include rem(background-size, 16 16);
-              flex-direction: column;
-              span {
-                color: $font-111111;
-                @include f14();
-                &.type-tit {
-                  @include f16(600);
-                }
-                + span {
-                  @include rem(margin-top, 8);
-                }
+              @include rem(border-radius, 10);
+            }
+            span {
+              color: $font-111111;
+              @include f14();
+              &.type-tit {
+                @include f16(600);
+              }
+              + span {
+                @include rem(margin-top, 8);
+              }
+            }
+            &.flex-between {
+              a {
+                align-items: center;
+                justify-content: space-between;
+                background: $bg-f5f6fa;
+                flex-direction: row;
               }
             }
           }
@@ -496,11 +504,119 @@
             @include rem(margin-top, 40);
             @include rem(padding-top, 40);
             border-top: 1px solid $line-dddddd;
+            + .column.line {
+              @include rem(margin-top, 40);
+            }
           }
           + .column {
             @include rem(margin-top, 12);
           }
         }
+      }
+      // 프로필 설정
+      &.profile {
+        .column-group {
+          .column {
+            .column-item {
+              a {
+                background: $bg-f5f6fa url("pathImages/icon/ico_arr_rigth_small.svg") center right 2rem no-repeat;
+                @include rem(background-size, 16 16);
+                flex-direction: column;
+              }
+            }
+          }
+        }
+      }
+      // 보안
+      &.security {
+        .column-group {
+          .column {
+            .column-item {
+              a {
+                background: $bg-f5f6fa url("pathImages/icon/ico_arr_rigth_small.svg") center right 2rem no-repeat;
+                @include rem(background-size, 16 16);
+                flex-direction: column;
+              }
+            }
+          }
+        }
+      }
+      // 관심 기럽 리스트
+      &.list {
+        .column-group {
+          .column {
+            .column-item {
+              display: flex;
+              @include rem(padding, 20);
+              align-items: center;
+              justify-content: space-between;
+              a {
+                padding: 0;
+              }
+              .btn-link {
+                @include rem(padding-right, 24);
+                background: url("pathImages/icon/ico_arr_rigth_small.svg") center right no-repeat;
+              }
+              .btn-delete {
+                @include rem(width, 16);
+                @include rem(height, 16);
+                background: url("pathImages/icon/ico_delete.svg") center center no-repeat;
+                background-size: 100% auto;
+              }
+            }
+          }
+        }
+      }
+      // 알림
+      &.alarm {
+        .column-group {
+          .column {
+            .column-item {
+              display: flex;
+              @include rem(padding, 20);
+              justify-content: space-between;
+              flex-direction: column;
+              .component-input {
+                position: absolute;
+                top: 50%;
+                @include rem(right, 20);
+                transform: translateY(-50%);
+              }
+            }
+          }
+          .column-list {
+            @include rem(margin-top, 40);
+            .list-tit {
+              display: block;
+              @include rem(padding-bottom, 16);
+              border-bottom: 1px solid $line-111111;
+            }
+            ul {
+              @include rem(margin-top, 20);
+              li {
+                position: relative;
+                @include rem(padding-left, 20);
+                &::before {
+                  content: "";
+                  position: absolute;
+                  @include rem(top, 8);
+                  @include rem(left, 10);
+                  @include rem(width, 3);
+                  @include rem(height, 3);
+                  border-radius: 100%;
+                  background: $bg-111111;
+                }
+                + li {
+                  @include rem(margin-top, 4);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .component-tab {
+      .tab-content {
       }
     }
   }

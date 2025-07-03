@@ -10,7 +10,7 @@
   background: $bg-ffffff;
   background-origin: border-box;
   background-clip: border-box;
-  @include rem(border-radius, 8);
+  @include rem(border-radius, 10);
   &.btn-xl {
     @include rem(min-width, 112);
     @include rem(min-height, 64);

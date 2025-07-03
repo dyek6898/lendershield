@@ -27,7 +27,7 @@
     border: 1px solid gainsboro;
     background-color: $bg-ffffff;
     overflow: hidden;
-    @include rem(border-radius, 8);
+    @include rem(border-radius, 10);
     input {
       border: 0;
       background-color: transparent;
