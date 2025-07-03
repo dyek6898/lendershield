@@ -162,7 +162,7 @@
                       <div class="column-group">
                         <div class="column">
                           <div class="logout-area">
-                            <a href="#">
+                            <a href="#" class="modal-btn02">
                               <span class="type-tit">비밀번호 변경</span>
                               <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
                             </a>
@@ -170,7 +170,7 @@
                         </div>
                         <div class="column">
                           <div class="logout-area">
-                            <a href="#">
+                            <a href="#" class="modal-btn03">
                               <span class="type-tit">계정 탈퇴하기 </span>
                               <span class="type-txt">해당 계정에서 로그아웃합니다. </span>
                             </a>
@@ -305,6 +305,94 @@
             </div>
           </div>
         </div>
+        <div class="component-modal change-password current" data-props-dimm-click="true">
+          <div class="modal-dimm"></div>
+          <div class="modal-frame">
+            <div class="modal-container">
+              <div class="modal-header">
+                <h3 class="modal-tit">비밀번호 변경하기</h3>
+              </div>
+              <div class="modal-content">
+                <!-- 기존 비밀번호 -->
+                <div class="component-form">
+                  <div class="form-element">
+                    <label for="temp_input_0001" class="input-label">
+                      <span class="label-txt"> 기존 비밀번호 </span>
+                    </label>
+                    <div class="form-group">
+                      <div class="component-input">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_valid_0001" placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="component-btns">
+                  <div class="btns-row two-col">
+                    <button class="btn btn-s btn-link">
+                      <span class="btn-txt">취소</span>
+                    </button>
+                    <button class="btn btn-s btn-primary">
+                      <span class="btn-txt">확인</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="modal-close"></button>
+            </div>
+          </div>
+        </div>
+        <div class="component-modal change-password new" data-props-dimm-click="true">
+          <div class="modal-dimm"></div>
+          <div class="modal-frame">
+            <div class="modal-container">
+              <div class="modal-header">
+                <h3 class="modal-tit">비밀번호 변경하기</h3>
+              </div>
+              <div class="modal-content">
+                <!-- 새로운 비밀번호 -->
+                <div class="component-form">
+                  <div class="form-element">
+                    <label for="temp_input_0001" class="input-label">
+                      <span class="label-txt"> 새로운 비밀번호 </span>
+                    </label>
+                    <div class="form-group">
+                      <div class="component-input">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_valid_0001" placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-element">
+                    <label for="temp_input_0001" class="input-label">
+                      <span class="label-txt"> 비밀번호 확인 </span>
+                    </label>
+                    <div class="form-group">
+                      <div class="component-input">
+                        <div class="input-field">
+                          <input type="text" id="temp_input_valid_0001" placeholder="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="component-btns">
+                  <div class="btns-row two-col">
+                    <button class="btn btn-s btn-link">
+                      <span class="btn-txt">취소</span>
+                    </button>
+                    <button class="btn btn-s btn-primary">
+                      <span class="btn-txt">확인</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="modal-close"></button>
+            </div>
+          </div>
+        </div>
       </div>
 
       @@include('pathPagesInclude/_footer.html')
@@ -314,6 +402,16 @@
         const modalBtn01 = document.querySelector(".modal-btn01");
         modalBtn01.addEventListener("click", () => {
           document.querySelector(".link").ui.open();
+        });
+        // [팝업] 기존 비밀번호 변경
+        const modalBtn02 = document.querySelector(".modal-btn02");
+        modalBtn02.addEventListener("click", () => {
+          document.querySelector(".change-password.current").ui.open();
+        });
+        // [팝업] 새로운 비밀번호 변경
+        const modalBtn03 = document.querySelector(".modal-btn03");
+        modalBtn03.addEventListener("click", () => {
+          document.querySelector(".change-password.new").ui.open();
         });
       });
     </script>

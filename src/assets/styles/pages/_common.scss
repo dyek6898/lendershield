@@ -31,17 +31,6 @@
       @include rem(margin-top, 20);
     }
   }
-  .login-tit {
-    .logo {
-      @include rem(width, 346);
-      @include rem(height, 52);
-      background: url("pathImages/icon/ico_logo.svg") center center no-repeat;
-      background-size: 100% auto;
-    }
-    + .component-form {
-      @include rem(margin-top, 80);
-    }
-  }
 }
 
 // 상세페이지
@@ -385,6 +374,28 @@
   background: $bg-f5f6fa;
   #content {
     height: calc(100vh - 293px);
+  }
+  .content-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .login-tit {
+    .logo {
+      @include rem(width, 346);
+      @include rem(height, 52);
+      background: url("pathImages/icon/ico_logo.svg") center center no-repeat;
+      background-size: 100% auto;
+    }
+    + .component-form {
+      @include rem(margin-top, 80);
+    }
+  }
+  .round-box {
+    width: 100%;
+    height: auto;
+    @include rem(margin-top, 80);
   }
 }
 

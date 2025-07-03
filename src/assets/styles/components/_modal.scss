@@ -39,6 +39,9 @@
         color: $font-111111;
         @include f18(600);
       }
+      + .modal-content {
+        @include rem(margin, 24 0 0);
+      }
     }
     .modal-content {
       width: 100%;
@@ -47,7 +50,6 @@
       @include rem(border-radius, 10);
       @include f16;
       color: $font-333333;
-      @include rem(max-height, 200);
       overflow-y: auto;
       .modal-info {
         @include rem(margin-top, 4);
@@ -177,6 +179,27 @@
             text-decoration: underline;
             text-underline-position: from-font;
           }
+        }
+      }
+    }
+  }
+  // 비밀번호 변경
+  &.change-password {
+    .component-form {
+      .form-element {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .form-group {
+        width: 100%;
+      }
+    }
+    .component-btns {
+      @include rem(margin-top, 40);
+      .btns-row {
+        .btn {
+          width: calc(50% - 0.5rem);
         }
       }
     }
