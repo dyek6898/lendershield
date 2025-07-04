@@ -117,7 +117,7 @@
     border-color: transparent;
     background: $bg-eeeeee;
     .btn-txt {
-      color: #364d8e;
+      color: $font-111111;
     }
     &:focus,
     &:hover {
@@ -292,6 +292,9 @@
     // btns row - col 2
     &.two-col {
       @include flex-grid((1, 1), 1rem);
+      .btn {
+        width: calc(50% - 0.5rem);
+      }
     }
 
     // btns row - col 3

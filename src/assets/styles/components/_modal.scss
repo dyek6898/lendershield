@@ -197,11 +197,6 @@
     }
     .component-btns {
       @include rem(margin-top, 40);
-      .btns-row {
-        .btn {
-          width: calc(50% - 0.5rem);
-        }
-      }
     }
   }
 }

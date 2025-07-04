@@ -5,21 +5,25 @@
   // tab 공통 -  head 영역
   .tab-head {
     display: flex;
+    @include rem(padding, 4);
+    background: $bg-dae1fa;
+    @include rem(border-radius, 8);
     align-items: center;
   }
 
   // tab 공통 -  label 영역
   .tab-label {
     width: 100%;
-    @include rem(padding, 20 0);
+    @include rem(padding, 6 0);
     @include f14;
-    color: black;
+    color: $font-999999;
     text-align: center;
-    border-bottom: 1px solid black;
     cursor: pointer;
     &[aria-selected="true"] {
-      color: blue;
-      @include rem(border-bottom, 2px solid blue);
+      color: $font-111111;
+      font-weight: 600;
+      @include rem(border-radius, 8);
+      background: $bg-ffffff;
     }
   }
 
