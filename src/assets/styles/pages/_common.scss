@@ -460,6 +460,9 @@
   }
   // 내 정보
   &.mypage {
+    .component-tab {
+      @include rem(margin-top, 38);
+    }
     .column-list {
       .list-tit {
         display: block;
@@ -667,6 +670,12 @@
             }
             + .column-list {
               @include rem(margin-top, 40);
+            }
+          }
+          .column-list {
+            .list-tit {
+              color: $line-111111;
+              @include f20(600);
             }
           }
         }

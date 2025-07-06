@@ -265,7 +265,7 @@
         @include rem(margin-left, 8);
         @include rem(padding, 8 20);
         border: 1px solid #000;
-        @include rem(border-radius, 5);
+        @include rem(border-radius, 10);
         &:disabled {
           border-color: #f7f8fd;
           background-color: #f7f8fd;

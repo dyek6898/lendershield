@@ -11,8 +11,9 @@
   z-index: $zindex-header;
   .header-inner {
     @include rem(max-width, 1680);
+    height: 100%;
     margin: 0 auto;
-    @include rem(padding, 24 20);
+    @include rem(padding, 16 20);
   }
 
   // Header top
@@ -40,6 +41,7 @@
   // Gnb
   .gnb-wrap {
     display: flex;
+    @include rem(height, 48);
     align-items: center;
     justify-content: space-between;
 
@@ -55,6 +57,18 @@
         overflow: hidden;
         vertical-align: middle;
         margin: 0;
+      }
+    }
+
+    .search-area {
+      display: none;
+      @include rem(width, 720);
+      @include rem(height, 48);
+      .component-input {
+        height: 100%;
+        .input-field {
+          height: 100%;
+        }
       }
     }
 
@@ -74,7 +88,7 @@
         }
         .component-btns {
           a {
-            @include rem(padding, 8 20);
+            @include rem(padding, 11 20);
             @include f16(700);
             @include rem(border-radius, 10);
             + a {

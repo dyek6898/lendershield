@@ -199,4 +199,104 @@
       @include rem(margin-top, 40);
     }
   }
+  // 검색 팝업
+  &.search {
+    .modal-container {
+      top: auto;
+      bottom: 0;
+      height: calc(100vh - 80px);
+      @include rem(padding, 40 24 0);
+      justify-content: initial;
+      transform: translate(-50%, 0);
+      .modal-content {
+        @include rem(max-width, 720);
+        margin: 0 auto;
+        text-align: left;
+        &.search-gruop {
+          .search-area {
+            .search-tit {
+              display: flex;
+              width: 100%;
+              align-items: center;
+              justify-content: space-between;
+              .type-tit {
+                color: $font-111111;
+                @include f18(700);
+              }
+              .search-delete {
+                color: $font-666666;
+                @include f14();
+              }
+            }
+            .tag-list {
+              @include rem(margin-top, 16);
+            }
+            .history-list {
+              @include rem(margin-top, 16);
+              .list-item {
+                @include rem(padding-left, 28);
+                color: $font-111111;
+                @include f14();
+                background: url("pathImages/icon/ico_time.svg") center left no-repeat;
+                @include rem(background-size, 20 20);
+                + .list-item {
+                  @include rem(margin-top, 12);
+                }
+              }
+            }
+            .column-list {
+              display: flex;
+              @include rem(margin-top, 16);
+              .column {
+                width: 50%;
+                .component-table {
+                  tr {
+                    .rank-change {
+                      position: relative;
+                      @include rem(margin, 0 -2);
+                      &::before {
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                      }
+                    }
+                    &.up {
+                      .rank-change {
+                        @include rem(padding-left, 10);
+                        &::before {
+                          border-left: 5px solid transparent;
+                          border-right: 5px solid transparent;
+                          border-bottom: 8px solid #ff4444;
+                        }
+                      }
+                    }
+                    &.down {
+                      .rank-change {
+                        @include rem(padding-left, 10);
+                        &::before {
+                          border-left: 5px solid transparent;
+                          border-right: 5px solid transparent;
+                          border-top: 8px solid #4444ff;
+                        }
+                      }
+                    }
+                  }
+                }
+                + .column {
+                  @include rem(margin-left, 8);
+                }
+              }
+            }
+            + .search-area {
+              @include rem(margin-top, 32);
+            }
+          }
+        }
+      }
+    }
+  }
 }
