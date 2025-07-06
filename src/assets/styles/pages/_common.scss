@@ -414,6 +414,7 @@
       background: $bg-090a3c;
       .btn-txt {
         color: $font-ffffff;
+        @include f18(600);
       }
     }
     .btn-area {
@@ -426,7 +427,7 @@
         @include f16();
         &.btn-join {
           color: $font-111111;
-          font-weight: 700;
+          font-weight: 600;
           text-decoration: underline;
           text-underline-position: from-font;
         }
@@ -704,6 +705,27 @@
     }
     .component-tab {
       .tab-content {
+      }
+    }
+  }
+}
+
+// header - 검색버튼 누를 시 레이아웃 정의
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .header {
+    .gnb-wrap {
+      .search-area {
+        @include rem(width, 510px);
+      }
+      .utill-area {
+        .utill-item {
+          .btn-search {
+            + .component-btns {
+            }
+          }
+          .component-btns {
+          }
+        }
       }
     }
   }

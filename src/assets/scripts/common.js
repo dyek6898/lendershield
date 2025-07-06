@@ -96,9 +96,25 @@ etUI.utils.ready(function () {
     });
   };
 
+  // [공통] 검색 팝업 - 검색기록 삭제
+  etUI.pages.searchHistoryDelete = function () {
+    const searchModal = document.querySelector(".component-modal.search");
+    const delectBtn = searchModal.querySelector(".search-delete");
+    const historyList = searchModal.querySelectorAll(".history-list .list-item");
+
+    delectBtn.addEventListener("click", (e) => {
+      historyList.forEach((item) => {
+        item.remove();
+      });
+      // delectBtn.style.display = "none";
+    });
+
+  };
+
   document.fonts.ready.then(() => {
     etUI.pages.clickEvent();
     etUI.pages.showMoreBtn();
     etUI.pages.showSearch();
+    etUI.pages.searchHistoryDelete();
   });
 });

@@ -205,11 +205,13 @@
       top: auto;
       bottom: 0;
       height: calc(100vh - 80px);
-      @include rem(padding, 40 24 0);
+      @include rem(padding, 40 24);
+      background: $bg-ffffff;
       justify-content: initial;
       transform: translate(-50%, 0);
       .modal-content {
         @include rem(max-width, 720);
+        @include rem(padding-right, 12);
         margin: 0 auto;
         text-align: left;
         &.search-gruop {
@@ -230,6 +232,17 @@
             }
             .tag-list {
               @include rem(margin-top, 16);
+              .tag {
+                display: inline-flex;
+                @include rem(height, 38);
+                @include rem(padding, 0 16);
+                @include rem(border-radius, 20);
+                background: $bg-f5f6fa;
+                align-items: center;
+                + .tag {
+                  @include rem(margin-left, 8);
+                }
+              }
             }
             .history-list {
               @include rem(margin-top, 16);
