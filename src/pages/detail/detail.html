@@ -1434,10 +1434,10 @@
         // s: 20250707 개발전달 - 말줄임 호버 스크립트 추가
         // 채무보증 테이블 - hover 시 말줄임 내용 전체 표시
         document.querySelectorAll(".component-table.hover tbody tr").forEach((el) => {
-          const debtorTd = el.querySelector("td:nth-child(2)");
-          const creditorTd = el.querySelector("td:nth-child(6)");
+          const td01 = el.querySelector("td:nth-child(2)");
+          const td02 = el.querySelector("td:nth-child(6)");
 
-          [debtorTd, creditorTd].forEach((td) => {
+          [td01, td02].forEach((td) => {
             if (!td) return;
 
             const span = td.querySelector("span");
@@ -1446,7 +1446,6 @@
             td.classList.remove("active");
             td.removeAttribute("data-fulltext");
 
-            // 말줄임 여부 체크는 span 기준!
             if (span.offsetWidth < span.scrollWidth) {
               td.classList.add("active");
               td.setAttribute("data-fulltext", span.textContent.trim());
