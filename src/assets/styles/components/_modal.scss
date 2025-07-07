@@ -279,7 +279,7 @@
                     }
                     &.up {
                       .rank-change {
-                        @include rem(padding-left, 10);
+                        @include rem(padding-left, 12);
                         &::before {
                           border-left: 5px solid transparent;
                           border-right: 5px solid transparent;
@@ -289,7 +289,7 @@
                     }
                     &.down {
                       .rank-change {
-                        @include rem(padding-left, 10);
+                        @include rem(padding-left, 12);
                         &::before {
                           border-left: 5px solid transparent;
                           border-right: 5px solid transparent;
