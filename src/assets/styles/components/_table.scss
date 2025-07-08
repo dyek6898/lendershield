@@ -80,6 +80,11 @@
         }
       }
     }
+    &.no-data {
+      td {
+        @include rem(padding, 80 20);
+      }
+    }
   }
 
   .type-blur {
