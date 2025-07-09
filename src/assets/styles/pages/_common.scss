@@ -37,6 +37,7 @@
   @include rem(margin-top, 120);
   .content-inner {
     @include rem(max-width, 1278);
+    @include rem(padding, 0 20);
   }
   .section {
     .tit-area {
@@ -48,9 +49,24 @@
         @include f18();
       }
       .section-tit {
+        position: relative;
         @include rem(margin-top, 4);
         color: $font-111111;
         @include f40();
+        .highlight {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            @include rem(bottom, -2);
+            width: 100%;
+            @include rem(height, 13);
+            background: #64e1ff; /* 형광펜 컬러 */
+            z-index: -1;
+            @include rem(border-radius, 8);
+          }
+        }
       }
       .section-txt {
         @include rem(margin-top, 24);
@@ -61,8 +77,11 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        @include rem(padding-right, 20);
         color: $font-012dff;
         @include f14();
+        background: url("pathImages/icon/ico_arr_rigth_small_blue.svg") center right no-repeat;
+        @include rem(background-size, 16 16);
       }
     }
     .img-area {
@@ -74,7 +93,7 @@
     &.section02 {
       background: $bg-f0f2f6;
       .content-inner {
-        @include rem(padding, 160 20);
+        @include rem(padding, 100 20);
       }
       .animation-area {
         position: relative;
@@ -94,22 +113,113 @@
           content: "";
           position: absolute;
           top: 0;
-          width: 160px;
-          height: 100%;
+          @include rem(width, 120);
+          @include rem(height, 100);
           z-index: 10;
         }
         &::before {
           right: 0;
-          background: linear-gradient(90deg, $bg-f0f2f6 0%, $bg-f0f2f6 99.95%);
+          background: linear-gradient(to right, rgba(240, 242, 246, 0) 0%, #f0f2f6 100%);
         }
         &::after {
           left: 0;
-          background: linear-gradient(-90deg, $bg-f0f2f6 0%, $bg-f0f2f6 99.95%);
+          background: linear-gradient(to left, rgba(240, 242, 246, 0) 0%, #f0f2f6 100%);
+        }
+      }
+    }
+    &.section03 {
+      background: $bg-111111;
+      .content-inner {
+        @include rem(max-width, 812);
+        margin: 0 auto;
+        @include rem(padding, 100 0);
+      }
+      .tit-area {
+        text-align: center;
+        .type-tit {
+          color: $font-ffffff;
+          @include f32(600);
+        }
+      }
+      .txt-area {
+        display: flex;
+        @include rem(margin-top, 40);
+        @include rem(padding, 32 0);
+        @include rem(border-radius, 20);
+        background: $bg-444444;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .ico-file {
+          display: inline-flex;
+          @include rem(width, 48);
+          @include rem(height, 48);
+          background: url("pathImages/icon/ico_file_blue.svg") center center no-repeat;
+          background-size: 100% auto;
+        }
+        .type-txt {
+          @include rem(margin-top, 16);
+          color: $font-ffffff;
+          @include f24(600);
+        }
+      }
+    }
+    &.section04 {
+      .content-inner {
+        @include rem(max-width, 1278);
+        margin: 0 auto;
+        @include rem(padding, 0 0 160);
+      }
+      .column-group {
+        .column-list {
+          display: flex;
+          @include rem(padding, 32 40);
+          @include rem(border-radius, 16);
+          background: $bg-f5f6fa;
+          .column {
+            span {
+              display: block;
+            }
+            .column-tit {
+              color: $font-111111;
+              @include f24(600);
+            }
+            .column-txt {
+              @include rem(margin-top, 16);
+              color: $font-444444;
+              @include f18();
+            }
+            img {
+              width: 100%;
+            }
+            &.img {
+              @include rem(width, 716);
+            }
+            &.txt {
+              flex: 1;
+            }
+            + .column {
+              @include rem(margin-left, 28);
+            }
+          }
+          &.reverse {
+            .column {
+              &.img {
+                order: 2;
+              }
+              &.txt {
+                order: 1;
+              }
+            }
+          }
+          + .column-list {
+            @include rem(margin-top, 40);
+          }
         }
       }
     }
     + .section {
-      @include rem(margin-top, 160);
+      @include rem(margin-top, 100);
     }
   }
 }
