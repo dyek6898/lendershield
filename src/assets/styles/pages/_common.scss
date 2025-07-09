@@ -1,5 +1,4 @@
 @use "../abstracts" as *;
-
 // 전체 공통
 // 라운드 박스
 .round-box {
@@ -29,6 +28,88 @@
     }
     + .column-group {
       @include rem(margin-top, 20);
+    }
+  }
+}
+
+// 메인
+.main-wrap {
+  @include rem(margin-top, 120);
+  .content-inner {
+    @include rem(max-width, 1278);
+  }
+  .section {
+    .tit-area {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .section-label {
+        color: $font-012dff;
+        @include f18();
+      }
+      .section-tit {
+        @include rem(margin-top, 4);
+        color: $font-111111;
+        @include f40();
+      }
+      .section-txt {
+        @include rem(margin-top, 24);
+        color: $font-444444;
+        @include f18();
+      }
+      .btn-move {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: $font-012dff;
+        @include f14();
+      }
+    }
+    .img-area {
+      @include rem(margin-top, 40);
+      img {
+        width: 100%;
+      }
+    }
+    &.section02 {
+      background: $bg-f0f2f6;
+      .content-inner {
+        @include rem(padding, 160 20);
+      }
+      .animation-area {
+        position: relative;
+        width: 100%;
+        @include rem(height, 100);
+        @include rem(margin-top, 40);
+        will-change: transform;
+        overflow: hidden;
+        .animation-inner {
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+          animation: marquee-scroll 30s linear infinite;
+        }
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 160px;
+          height: 100%;
+          z-index: 10;
+        }
+        &::before {
+          right: 0;
+          background: linear-gradient(90deg, $bg-f0f2f6 0%, $bg-f0f2f6 99.95%);
+        }
+        &::after {
+          left: 0;
+          background: linear-gradient(-90deg, $bg-f0f2f6 0%, $bg-f0f2f6 99.95%);
+        }
+      }
+    }
+    + .section {
+      @include rem(margin-top, 160);
     }
   }
 }
@@ -859,5 +940,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }

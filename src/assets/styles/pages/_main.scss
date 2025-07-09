@@ -1,0 +1,15 @@
+.main-wrap {
+  .section {
+    .section-label {
+      color: #012dff;
+      // @include f18();
+    }
+    .section-ti {
+      // color: $font-111111;
+      // @include f40();
+    }
+    + .section {
+      // @include rem(margin-top, 160);
+    }
+  }
+}

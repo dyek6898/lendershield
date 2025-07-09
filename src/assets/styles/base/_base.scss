@@ -194,6 +194,10 @@ body {
   &.pb-0 {
     padding-bottom: 0;
   }
+  &.full {
+    max-width: 100%;
+    margin: 0;
+  }
 }
 
 .page-tit-group {
