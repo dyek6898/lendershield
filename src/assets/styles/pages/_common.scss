@@ -77,11 +77,13 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        @include rem(padding-right, 20);
-        color: $font-012dff;
-        @include f14();
-        background: url("pathImages/icon/ico_arr_rigth_small_blue.svg") center right no-repeat;
-        @include rem(background-size, 16 16);
+        span {
+          @include rem(padding-right, 20);
+          color: $font-012dff;
+          @include f14();
+          background: url("pathImages/icon/ico_arr_rigth_small_blue.svg") center right no-repeat;
+          @include rem(background-size, 16 16);
+        }
       }
     }
     .img-area {
@@ -108,6 +110,12 @@
           white-space: nowrap;
           animation: marquee-scroll 30s linear infinite;
         }
+        .img {
+          @include rem(height, 100);
+          img {
+            height: 100%;
+          }
+        }
         &::before,
         &::after {
           content: "";
@@ -128,11 +136,12 @@
       }
     }
     &.section03 {
+      margin-top: 0 !important;
       background: $bg-111111;
       .content-inner {
         @include rem(max-width, 812);
         margin: 0 auto;
-        @include rem(padding, 100 0);
+        @include rem(padding, 100 20);
       }
       .tit-area {
         text-align: center;
@@ -220,6 +229,100 @@
     }
     + .section {
       @include rem(margin-top, 100);
+    }
+  }
+  // mo
+  @include mobile {
+    @include rem(margin-top, 24);
+    .section {
+      .content-inner {
+        max-width: none;
+      }
+      .tit-area {
+        .section-label {
+          @include f16();
+        }
+        .section-tit {
+          @include f24();
+        }
+        .section-txt {
+          @include rem(margin-top, 16);
+          @include f16();
+        }
+        .btn-move {
+          position: relative;
+          @include rem(margin-top, 16);
+        }
+      }
+      .img-area {
+        @include rem(margin-top, 32);
+      }
+      &.section02 {
+        .content-inner {
+          @include rem(padding, 40 20);
+        }
+        .animation-area {
+          .img {
+            @include rem(height, 76);
+          }
+          &::before,
+          &::after {
+            @include rem(height, 76);
+          }
+        }
+      }
+      &.section03 {
+        .content-inner {
+          @include rem(padding, 40 20);
+        }
+        .tit-area {
+          .type-tit {
+            @include f20();
+          }
+        }
+        .txt-area {
+          .type-txt {
+            @include f16();
+          }
+        }
+      }
+      &.section04 {
+        .content-inner {
+          @include rem(padding, 0 20 100);
+        }
+        .column-group {
+          .column-list {
+            @include rem(padding, 20);
+            flex-direction: column;
+            .column {
+              .column-tit {
+                @include f18();
+              }
+              .column-txt {
+                @include rem(margin-top, 8);
+                @include f14();
+              }
+              &.img {
+                width: auto;
+                @include rem(margin-top, 24);
+                order: 2;
+              }
+              &.txt {
+                order: 1;
+              }
+              + .column {
+                margin-left: 0;
+              }
+            }
+            + .column-list {
+              @include rem(margin-top, 16);
+            }
+          }
+        }
+      }
+      + .section {
+        @include rem(margin-top, 54);
+      }
     }
   }
 }

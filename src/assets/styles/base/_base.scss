@@ -64,6 +64,22 @@
   display: none;
 }
 @media (max-width: 1023px) {
+  .header {
+    @include rem(height, 56 !important);
+    border-bottom: 0 !important;
+    .header-inner {
+      @include rem(padding, 12 20 !important);
+    }
+    .gnb-wrap {
+      @include rem(height, 32 !important);
+      .utill-area {
+        display: none;
+      }
+    }
+  }
+  #content {
+    @include rem(padding-top, 55px !important);
+  }
   .mobile-mode-dimm {
     display: flex;
     position: fixed;

@@ -34,11 +34,11 @@ html {
 
 // 적용범위
 // 기준 디바이스 ~ 500px이하
-@media (min-width: 375px) and (max-width: 500px) {
-  html {
-    font-size: calc(#{$global-font-size} + 20 * ((100vw - 375px) / 500));
-  }
-}
+// @media (min-width: 375px) and (max-width: 500px) {
+//   html {
+//     font-size: calc(#{$global-font-size} + 20 * ((100vw - 375px) / 500));
+//   }
+// }
 
 // // 적용범위
 // // 조건 : 500px 보다 클 경우 적용
