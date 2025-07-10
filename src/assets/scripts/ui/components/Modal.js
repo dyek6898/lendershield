@@ -63,12 +63,16 @@ function Modal() {
     setupActions();
 
     // focus trap
-    focusTrapInstance = focusTrap.createFocusTrap($target, {
-      escapeDeactivates: props.esc,
-      onActivate: actions.focusActivate,
-      onDeactivate: actions.focusDeactivate,
-      allowOutsideClick: props.clickOutside ? true : false,
-    });
+    if (!$target.classList.contains('search')) {
+      focusTrapInstance = focusTrap.createFocusTrap($target, {
+        escapeDeactivates: props.esc,
+        onActivate: actions.focusActivate,
+        onDeactivate: actions.focusDeactivate,
+        allowOutsideClick: props.clickOutside ? true : false,
+      });
+    } else {
+      focusTrapInstance = null;
+    }
 
     // state
     // setState({ state: props.state });
@@ -132,7 +136,7 @@ function Modal() {
   function setupActions() {
     const { getTopDepth, setLayerOpacity, enableScrollLock, disableScrollLock } = etUI.hooks.useLayer();
 
-    actions.focusActivate = () => {};
+    actions.focusActivate = () => { };
 
     actions.focusDeactivate = () => {
       close();
@@ -144,7 +148,7 @@ function Modal() {
       setLayerOpacity(DIMM_OPACITY);
       enableScrollLock();
 
-      if ($modalDimm) gsap.timeline().to($modalDimm, {duration: 0, display: 'block', opacity: 0}).to($modalDimm, { duration: 0.15, opacity: 1 });
+      if ($modalDimm) gsap.timeline().to($modalDimm, { duration: 0, display: 'block', opacity: 0 }).to($modalDimm, { duration: 0.15, opacity: 1 });
 
       gsap
         .timeline()
@@ -229,10 +233,10 @@ function Modal() {
 
     if (isOpened) {
       actions.open();
-      focusTrapInstance.activate();
+      if (focusTrapInstance) focusTrapInstance.activate();
     } else {
       actions.close();
-      focusTrapInstance.deactivate();
+      if (focusTrapInstance) focusTrapInstance.deactivate();
     }
   }
 
