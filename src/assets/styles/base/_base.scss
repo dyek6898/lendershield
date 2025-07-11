@@ -200,7 +200,7 @@ body {
 }
 
 .content-inner {
-  @include rem(max-width, 1400);
+  @include rem(max-width, 1162);
   margin: 0 auto;
   @include rem(padding, 0 20 160);
   &.wid-756 {

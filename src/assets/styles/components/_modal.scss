@@ -216,6 +216,7 @@
         text-align: left;
         &.search-gruop {
           .search-area {
+            @include rem(min-height, 81);
             .search-tit {
               display: flex;
               width: 100%;
@@ -306,6 +307,20 @@
             }
             + .search-area {
               @include rem(margin-top, 32);
+            }
+          }
+          .no-data {
+            display: flex;
+            @include rem(margin-top, 100);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .ico-nodata {
+              display: block;
+              @include rem(width, 160);
+              @include rem(height, 160);
+              background: url("pathImages/icon/ico_nodata.svg") center center no-repeat;
+              background-size: 100% auto;
             }
           }
         }

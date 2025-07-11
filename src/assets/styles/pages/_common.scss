@@ -602,7 +602,7 @@
           td {
             span {
               display: inline-block;
-              @include rem(max-width, 300);
+              @include rem(max-width, 210);
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
@@ -654,7 +654,7 @@
         }
       }
       .new-list {
-        @include rem(height, 327);
+        @include rem(height, 365);
         border-top: 1px solid $line-eeeeee;
         .list-item {
           position: relative;
@@ -1112,22 +1112,6 @@
             }
           }
           .component-btns {
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 1160px) and (max-width: 1300px) {
-  .datail-wrap {
-    .debt-guarantee-section {
-      .section-column {
-        .component-table.hover {
-          td {
-            span {
-              @include rem(max-width, 210);
-            }
           }
         }
       }
