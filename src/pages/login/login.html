@@ -25,9 +25,13 @@
     <div id="wrap">
       @@include('pathPagesInclude/_header.html', { "title": "test_title01", "title02": "test_title02" })
 
-      <div class="page-login" id="container">
+      <!-- 20250712 class 변경(page-login > page-center) -->
+      <div class="page-center" id="container">
+        <!-- //20250712 class 변경(page-login > page-center) -->
         <div id="content">
-          <div class="form-wrap">
+          <!-- 20250712 class 추가(form-wrap +login) -->
+          <div class="form-wrap login">
+            <!-- //20250712 class 추가(form-wrap +login) -->
             <div class="content-inner wid-756 pb-0">
               <div class="login-tit">
                 <h2 class="logo">

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>프로젝트타이틀</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="pathStyles/style.css" type="text/css" rel="stylesheet" />
+    <script src="pathScripts/common.ui.plugin.js" data-init></script>
+    <script src="pathScripts/common.ui.js" data-init></script>
+    <script src="pathScripts/common.js"></script>
+    <!-- 약관 템플릿 js(추후 작업예정) -->
+    <!-- <script src="pathScripts/ui/templates/privacy_policy_template.js"></script> -->
+  </head>
+
+  <body>
+    <div id="wrap">
+      @@include('pathPagesInclude/_header.html', { "title": "test_title01", "title02": "test_title02" })
+
+      <div class="page-center" id="container">
+        <div id="content">
+          <div class="form-wrap error">
+            <div class="content-inner wid-756 pb-0">
+              <div class="login-tit">
+                <span class="type-tit">홈페이지 이용에 불편을 드려서 죄송합니다.</span>
+              </div>
+              <div class="round-box">
+                <i class="ico error403"></i>
+                <span class="error-txt">관리자에게 오류를 자동 통보하였으니, 잠시후에 다시 이용해 주시기 바랍니다.</span>
+                <a href="#" class="btn btn-home">
+                  <span class="btn-txt">홈으로</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @@include('pathPagesInclude/_footer.html')
+    </div>
+    <div class="dimm"></div>
+  </body>
+</html>

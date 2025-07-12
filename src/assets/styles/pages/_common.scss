@@ -757,8 +757,7 @@
   }
 }
 
-// 로그인/회원가입
-.page-login {
+.page-center {
   background: $bg-f5f6fa;
   #content {
     height: calc(100vh - 293px);
@@ -768,17 +767,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-  }
-  .login-tit {
-    .logo {
-      @include rem(width, 346);
-      @include rem(height, 52);
-      background: url("pathImages/icon/ico_logo.svg") center center no-repeat;
-      background-size: 100% auto;
-    }
-    + .component-form {
-      @include rem(margin-top, 80);
-    }
   }
   .round-box {
     width: 100%;
@@ -840,6 +828,20 @@
       .btn-txt {
         color: $font-090a3c;
         @include f14(400);
+      }
+    }
+  }
+  // 로그인
+  &.login {
+    .login-tit {
+      .logo {
+        @include rem(width, 346);
+        @include rem(height, 52);
+        background: url("pathImages/icon/ico_logo.svg") center center no-repeat;
+        background-size: 100% auto;
+      }
+      + .component-form {
+        @include rem(margin-top, 80);
       }
     }
   }
@@ -1093,6 +1095,46 @@
     }
     .component-tab {
       .tab-content {
+      }
+    }
+  }
+  &.error {
+    .login-tit {
+      .type-tit {
+        color: $font-111111;
+        @include f40(600);
+      }
+    }
+    .round-box {
+      @include rem(margin-top, 40);
+      @include rem(padding, 48 70);
+      .ico {
+        display: block;
+        @include rem(width, 240);
+        @include rem(height, 240);
+        &.error404 {
+          background: url("pathImages/icon/ico_error404.svg") center center no-repeat;
+          background-size: 100% auto;
+        }
+        &.error403 {
+          background: url("pathImages/icon/ico_error403.svg") center center no-repeat;
+          background-size: 100% auto;
+        }
+      }
+      .error-txt {
+        @include rem(margin-top, 32);
+        color: $font-111111;
+        @include f18();
+      }
+      .btn {
+        @include rem(width, 240);
+        @include rem(height, 56);
+        @include rem(margin-top, 48);
+        background: $bg-090a3c;
+        .btn-txt {
+          color: $font-ffffff;
+          @include f18(600);
+        }
       }
     }
   }
