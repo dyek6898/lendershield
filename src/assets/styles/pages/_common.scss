@@ -288,7 +288,7 @@
       }
       &.section04 {
         .content-inner {
-          @include rem(padding, 0 20 100);
+          @include rem(padding, 0 20 80);
         }
         .column-group {
           .column-list {
@@ -321,7 +321,7 @@
         }
       }
       + .section {
-        @include rem(margin-top, 54);
+        @include rem(margin-top, 40);
       }
     }
   }
