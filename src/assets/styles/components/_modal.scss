@@ -210,7 +210,7 @@
       justify-content: initial;
       transform: translate(-50%, 0);
       .modal-content {
-        @include rem(max-width, 720);
+        @include rem(max-width, 970);
         @include rem(padding-right, 12);
         margin: 0 auto;
         text-align: left;
