@@ -102,6 +102,13 @@
           align-items: center;
           .btn-area {
             position: relative;
+            display: flex;
+            align-items: center;
+            button {
+              + button {
+                @include rem(margin-left, 16);
+              }
+            }
             .btn-alarm {
               @include rem(width, 24);
               @include rem(height, 24);

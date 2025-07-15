@@ -36,8 +36,8 @@ function useLayer(type = 'modal') {
   // modal 떴을때 덜컹거리는 거 없애는 test 중
   function enableScrollLock() {
     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.documentElement.style.overflow = 'hidden';
-    document.documentElement.style.paddingRight = `${scrollBarWidth}px`;
+    document.querySelector('body').style.overflow = 'hidden';
+    document.querySelector('header').style.paddingRight = `${scrollBarWidth}px`;
     // const scrollY = window.scrollY;
     // document.documentElement.style.overflowY = 'scroll';
     // document.body.style.position = 'fixed';
@@ -51,8 +51,8 @@ function useLayer(type = 'modal') {
     // if ($visibleLayerComponents.length === 0) {
     //   document.documentElement.style.overflow = null;
     // }
-    document.documentElement.style.overflow = null;
-    document.documentElement.style.paddingRight = '';
+    document.querySelector('body').style.overflow = null;
+    document.querySelector('header').style.paddingRight = '';
 
     // const scrollY = parseInt(document.body.style.top || '0') * -1;
     // document.documentElement.style.overflowY = '';

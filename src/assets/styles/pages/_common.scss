@@ -1054,9 +1054,11 @@
               flex-direction: column;
               .component-input {
                 position: absolute;
-                top: 50%;
+                @include rem(top, 30);
                 @include rem(right, 20);
-                transform: translateY(-50%);
+              }
+              .type-txt {
+                @include rem(padding-right, 80);
               }
             }
             + .column-list {
