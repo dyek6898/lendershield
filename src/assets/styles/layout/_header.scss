@@ -110,11 +110,24 @@
               }
             }
             .btn-alarm {
+              position: relative;
               @include rem(width, 24);
               @include rem(height, 24);
               padding: 0;
               background: url("pathImages/icon/ico_alarm.svg") center no-repeat;
               background-size: 100% auto;
+              &.active {
+                &::before {
+                  content: "";
+                  position: absolute;
+                  @include rem(top, -2);
+                  right: 0;
+                  @include rem(width, 4);
+                  @include rem(height, 4);
+                  border-radius: 100%;
+                  background: #ff5470;
+                }
+              }
             }
             .alarm-info {
               display: none;
