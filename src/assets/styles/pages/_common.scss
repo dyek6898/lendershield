@@ -852,7 +852,7 @@
   // 내 정보
   &.mypage {
     height: auto;
-    .component-inner {
+    .content-inner {
       height: auto;
     }
     .component-tab {
@@ -1146,6 +1146,27 @@
         }
       }
     }
+  }
+}
+
+// 검색 결과 없음
+.nodata-area {
+  display: flex;
+  @include rem(margin-top, 100);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .ico-nodata {
+    display: block;
+    @include rem(width, 160);
+    @include rem(height, 160);
+    background: url("pathImages/icon/ico_nodata.svg") center center no-repeat;
+    background-size: 100% auto;
+  }
+  .type-txt {
+    @include rem(margin-top, 32);
+    color: $font-333333;
+    @include f18(700);
   }
 }
 
