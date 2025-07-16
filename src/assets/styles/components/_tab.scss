@@ -35,7 +35,7 @@
 
   // tab 공통 -  content 영역
   .tab-content {
-    display: none;
+    display: block;
     @include f14;
     color: black;
     &.show {

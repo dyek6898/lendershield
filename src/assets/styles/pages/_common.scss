@@ -851,8 +851,15 @@
   }
   // 내 정보
   &.mypage {
+    height: auto;
+    .component-inner {
+      height: auto;
+    }
     .component-tab {
       @include rem(margin-top, 38);
+      .round-box {
+        height: auto;
+      }
     }
     .column-list {
       .list-tit {

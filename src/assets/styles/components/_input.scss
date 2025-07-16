@@ -36,9 +36,10 @@
       @include rem(padding, 0 16);
       color: $font-111111;
       @include f14();
-      ::placeholder {
-        color: $font-999999;
+      &::placeholder {
+        color: gray;
         @include f14();
+        opacity: 0.3;
       }
       &[type="search"] {
         &::-webkit-search-cancel-button {
