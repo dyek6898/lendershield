@@ -108,23 +108,30 @@ function Accordion() {
         afterOpen: props.afterOpen,
         afterClose: props.afterClose,
       });
-
-      if (props.type === 'separate' || props.type === 'single') {
-        if ($collapse.dataset.state === 'open') {
-          // 안전하게 open 함수 호출
-          try {
-            open(i);
-          } catch (error) {
-            console.warn('Failed to open accordion item:', error);
-          }
-        }
-      }
-
       return collapse;
     });
 
-    if (state.index > -1) {
-      setState({ index: state.index }, { immediate: true });
+    // 초기 열릴 index 결정
+    let initialIndex = -1;
+    const dataIndex = $target.getAttribute('data-index');
+    if (dataIndex !== null) {
+      const targetIndex = parseInt(dataIndex, 10);
+      if (targetIndex >= 0 && targetIndex < $accordionItems.length) {
+        initialIndex = targetIndex;
+      }
+    } else {
+      if (props.type === 'separate' || props.type === 'single') {
+        $accordionItems.forEach(($collapse, i) => {
+          if ($collapse.dataset.state === 'open') {
+            initialIndex = i;
+          }
+        });
+      }
+    }
+
+    // **여기서 한 번만 open**
+    if (initialIndex > -1) {
+      setState({ index: initialIndex }, { immediate: true });
     }
   }
 
@@ -156,24 +163,21 @@ function Accordion() {
     index = +index;
     if (props.type === 'single') {
       $accordionItems.forEach(($item, i) => {
-        if (!$item || !$item.ui) {
-          console.warn('Accordion item or UI not initialized:', i);
-          return;
-        }
-        
+        if (!$item || !$item.ui) return;
         if (i !== index) {
           if ($item.ui.core && $item.ui.core.state && $item.ui.core.state.state === 'open') {
             $item.ui.close(immediate);
           }
         } else {
+          // 이미 열려있으면 return
+          if ($item.ui.core.state.state === 'open') return;
           $item.ui.open(immediate);
         }
       });
     } else {
       if (index !== -1 && $accordionItems[index] && $accordionItems[index].ui) {
+        if ($accordionItems[index].ui.core.state.state === 'open') return;
         $accordionItems[index].ui.open(immediate);
-      } else if (index !== -1) {
-        console.warn('Accordion item or UI not initialized for index:', index);
       }
     }
   }

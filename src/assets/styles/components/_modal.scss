@@ -163,6 +163,16 @@
               align-items: baseline;
             }
             .component-input {
+              &.input-invalid {
+                .input-info {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  .info-time {
+                    color: $font-000000;
+                  }
+                }
+              }
             }
             .btn-confirm {
               @include rem(width, 120);

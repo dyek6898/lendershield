@@ -392,6 +392,21 @@
       .group-tit {
         @include f24(600);
       }
+      .flex-box {
+        display: flex;
+        align-items: center;
+        .btn-bookmark {
+          @include rem(width, 24);
+          @include rem(height, 24);
+          @include rem(margin-left, 8);
+          background: url("pathImages/icon/ico_bookmark.svg") center center no-repeat;
+          background-size: 100% auto;
+          &.on {
+            background: url("pathImages/icon/ico_bookmark_on.svg") center center no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
       .btn-download {
         @include rem(padding, 10 20);
         @include rem(border-radius, 10);
@@ -423,8 +438,11 @@
             }
           }
           .logo-area {
+            @include rem(width, 160);
+            @include rem(height, 102);
             img {
               width: 100%;
+              height: 100%;
             }
           }
           .list-item {
@@ -848,6 +866,41 @@
   // 회원가입
   &.join {
     margin-top: 0;
+  }
+  // 약관동의
+  &.terms {
+    .round-box {
+      @include rem(padding, 20 24);
+    }
+    .component-accordion {
+      width: 100%;
+      border-top: none;
+      .collapse-tit {
+        @include rem(height, 64);
+        background: none;
+        .component-input {
+          position: absolute;
+          z-index: 11111;
+        }
+      }
+      .collapse-content {
+        color: $font-666666;
+        @include f16();
+        border-bottom: none;
+        background: $bg-f5f6fa;
+        overflow: scroll;
+      }
+      .accordion-item {
+        border-bottom: 0;
+        &[data-state="open"] {
+          .collapse-content {
+            height: auto;
+            @include rem(padding, 30);
+            border-top: none;
+          }
+        }
+      }
+    }
   }
   // 내 정보
   &.mypage {
