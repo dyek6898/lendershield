@@ -865,7 +865,14 @@
   }
   // 회원가입
   &.join {
+    height: auto;
     margin-top: 0;
+    .content-inner {
+      height: auto;
+    }
+    .round-box {
+      height: auto;
+    }
     .component-accordion {
       width: 100%;
       @include rem(padding, 20 24);
@@ -899,6 +906,16 @@
         + .accordion-item {
           border-top: 1px solid $line-eeeeee;
         }
+      }
+    }
+    .btn-join {
+      @include rem(min-width, 230);
+      @include rem(margin-top, 64);
+      @include rem(padding, 14 14);
+      background: $bg-090a3c;
+      .btn-txt {
+        color: $font-ffffff;
+        @include f18(600);
       }
     }
   }
@@ -947,6 +964,7 @@
     }
     .rate-plan {
       display: flex;
+      @include rem(margin-top, 64);
       align-items: stretch;
       .round-box {
         width: 50%;
@@ -988,6 +1006,33 @@
               background: url("pathImages/icon/ico_crown.svg") center left no-repeat;
               @include rem(background-size, 24 24);
             }
+          }
+        }
+        &.my-plan {
+          position: relative;
+          border: 2px solid $line-012dff;
+          &::before {
+            content: "현재 나의 요금제";
+            position: absolute;
+            @include rem(top, -42);
+            left: 50%;
+            @include rem(padding, 5 8);
+            color: $font-ffffff;
+            @include f12(600);
+            @include rem(border-radius, 4);
+            background: $bg-090a3c;
+            transform: translateX(-50%);
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            @include rem(top, -14);
+            left: 50%;
+            transform: translateX(-50%);
+            @include rem(width, 6);
+            @include rem(height, 4);
+            background: #0d0d48; /* 네이비 */
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
           }
         }
       }

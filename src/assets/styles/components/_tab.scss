@@ -30,7 +30,7 @@
   // tab 공통 -  body 영역
   .tab-body {
     position: relative;
-    @include rem(margin-top, 40);
+    @include rem(margin-top, 24);
   }
 
   // tab 공통 -  content 영역
