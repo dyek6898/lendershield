@@ -866,17 +866,14 @@
   // 회원가입
   &.join {
     margin-top: 0;
-  }
-  // 약관동의
-  &.terms {
-    .round-box {
-      @include rem(padding, 20 24);
-    }
     .component-accordion {
       width: 100%;
-      border-top: none;
+      @include rem(padding, 20 24);
+      border: 1px solid $line-eeeeee;
+      @include rem(border-radius, 16);
       .collapse-tit {
         @include rem(height, 64);
+        @include rem(padding, 20 0);
         background: none;
         .component-input {
           position: absolute;
@@ -898,6 +895,9 @@
             @include rem(padding, 30);
             border-top: none;
           }
+        }
+        + .accordion-item {
+          border-top: 1px solid $line-eeeeee;
         }
       }
     }

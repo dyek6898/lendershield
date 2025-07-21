@@ -160,19 +160,27 @@
         .component-form {
           .form-element {
             .form-group {
+              position: relative;
+              @include rem(height, 74);
               align-items: baseline;
             }
             .component-input {
+              position: relative;
               &.input-invalid {
                 .input-info {
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
-                  .info-time {
-                    color: $font-000000;
-                  }
                 }
               }
+            }
+
+            .info-time {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              color: $font-000000;
+              @include f12();
             }
             .btn-confirm {
               @include rem(width, 120);
