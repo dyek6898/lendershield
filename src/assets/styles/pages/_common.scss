@@ -576,7 +576,7 @@
       }
       .chart {
         width: 100%;
-        @include rem(height, 235);
+        height: auto;
         @include rem(margin-top, 22);
         canvas {
           height: 100% !important;
